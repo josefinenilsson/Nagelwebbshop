@@ -1,11 +1,10 @@
-
 # Webb och Databaser, TWDK13
 
 # Projekt
 
-> Huvudidé: Bygg en webshop. Välj själv vad som skall säljas, hitta en nisch som ni tycker om. Webshoppen skall ha en användarvänlig och tilltalande layoit.
+Huvudidé: Bygg en webshop. Välj själv vad som skall säljas, hitta en nisch som ni tycker om. Webshoppen skall ha en användarvänlig och tilltalande layoit.
 
-> Nedan följer kriterier för vad som måste uppfyllas för en viss betygsnivå.
+Nedan följer kriterier för vad som måste uppfyllas för en viss betygsnivå.
 
 ##### För betyg 3:
 - Inloggningsfunktion skall finnas.
@@ -62,20 +61,24 @@ redigeras av administratören räknar sedan om priset för SEK, NOK och USD.
 försäljningsstatistik (antal gjorda ordrar, summa belopp för dessa ordrar, medelvärde, minsta resp. största orderbelopp) under en viss tidsperiod för de olika produkterna i en viss produktkategori. Dessa uppgifter tas fram från databasen med lämpliga SQL‐frågor.
 
 # Projektupplägg och redovisning
-> Varje projektgrupp skall bestå av 3 medlemmar. Det finns (tomma) projektgrupper i pingpong‐aktiviteten för kursen. Ni kan själva lägga in er i dessa projektgrupper. Projektet redovisas med en muntlig redovisning i slutet på kursen, prel. Torsdag 12/12 kl. 09:00 – 11:45. Tre grupper redovisar åt gången ungefär 15 min per grupp. Redovisningen är informell och går till så att examinatorerna besöker varje grupp. Gruppen beskriver sin applikation och demonstrera vid dator och beskriver också sitt arbete med projektet (inga powerpoint presentationer). Examinatorerna kan ställa frågor på olika detaljer.
+
+Varje projektgrupp skall bestå av 3 medlemmar. Det finns (tomma) projektgrupper i pingpong‐aktiviteten för kursen. Ni kan själva lägga in er i dessa projektgrupper. Projektet redovisas med en muntlig redovisning i slutet på kursen, prel. Torsdag 12/12 kl. 09:00 – 11:45. Tre grupper redovisar åt gången ungefär 15 min per grupp. Redovisningen är informell och går till så att examinatorerna besöker varje grupp. Gruppen beskriver sin applikation och demonstrera vid dator och beskriver också sitt arbete med projektet (inga powerpoint presentationer). Examinatorerna kan ställa frågor på olika detaljer.
 
 # Individuell betygsättning i grupp
-> Efter redovisning av projektet och inlämning av projektdokumentation samt ev. projektrapport får varje betygsgrupp en poängsumma. Summan skall sedan fördelas mellan studenterna, av studenterna själva. Den fördelning av summan som gruppen kommer fram till utgör ett betygsförslag som lämnas till kursansvarig, som sedan fastställer betyget med förslaget som grund.
+
+Efter redovisning av projektet och inlämning av projektdokumentation samt ev. projektrapport får varje betygsgrupp en poängsumma. Summan skall sedan fördelas mellan studenterna, av studenterna själva. Den fördelning av summan som gruppen kommer fram till utgör ett betygsförslag som lämnas till kursansvarig, som sedan fastställer betyget med förslaget som grund.
 Ingen student kan få mindre än 2 poäng. 2 poäng innebär underkänt. Ingen student kan få mer än 5 poäng. Gruppen kan inte få mer än 5 multiplicerat med antalet gruppmedlemmar. (dvs för en grupp med tre medlemmar kommer den totala poängsumman att ligga mellan 6 och 15).
 
-> Exempel för en grupp om 3 personer:
+Exempel för en grupp om 3 personer:
 
-> Projektet tilldelas 13 poäng. Betygsfördelningsförslag från studenterna: Student A: 4
-> Student B: 4
-> Student C: 5
+Projektet tilldelas 13 poäng. Betygsfördelningsförslag från studenterna:
 
-> (Projektgruppen kan givetvis välja samma betygsnivå för samtliga medlemmar i gruppen. I exemplet skulle det betyda att alla studenterna får betyget 4).
+Student A: 4
+Student B: 4
+Student C: 5
 
-> Om kursansvarig inte ser anledning till att ändra betygen blir studenternas betyg enligt förslaget.
+(Projektgruppen kan givetvis välja samma betygsnivå för samtliga medlemmar i gruppen. I exemplet skulle det betyda att alla studenterna får betyget 4).
 
-> Modellen syftar till att ingen student skall kunna åka snålskjuts på andra studenters kunskap. Studenterna måste också motivera sin prestation mot sina medarbetare och våga säga till om någon gruppmedlem inte bidragit till gruppens framgång. Kontroversiell modell, men nyttig och fungerar.
+Om kursansvarig inte ser anledning till att ändra betygen blir studenternas betyg enligt förslaget.
+
+Modellen syftar till att ingen student skall kunna åka snålskjuts på andra studenters kunskap. Studenterna måste också motivera sin prestation mot sina medarbetare och våga säga till om någon gruppmedlem inte bidragit till gruppens framgång. Kontroversiell modell, men nyttig och fungerar.
