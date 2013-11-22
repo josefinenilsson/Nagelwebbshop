@@ -2,7 +2,7 @@
 
 # Projekt
 
-Huvudidé: Bygg en webshop. Välj själv vad som skall säljas, hitta en nisch som ni tycker om. Webshoppen skall ha en användarvänlig och tilltalande layoit.
+Huvudidé: Bygg en webshop. Välj själv vad som skall säljas, hitta en nisch som ni tycker om. Webshoppen skall ha en användarvänlig och tilltalande layout.
 
 Nedan följer kriterier för vad som måste uppfyllas för en viss betygsnivå.
 
@@ -15,7 +15,6 @@ Nedan följer kriterier för vad som måste uppfyllas för en viss betygsnivå.
 KONTON
 - Konton skall ha olika accessnivå beroende på om man är admin eller kund.
 - Konton skall kunna skapas och tas bort av administratör, men nya kudner ska kunna skapa sina egna konton via hemsidan.
-- Produkter skall kunna läggas till och tas bort av administratör, egenskaper som skall finnas är Namn, beskrivning, pris, kategori.
 
 KUNDKORG
 - En kundkorg skall finnas där man kan se produkter, antal, moms (25%) och summan av sin
@@ -29,9 +28,13 @@ ORDER
 
 PRODUKTER
 - Alla produkter skall ha en representativ produktbild (alla produkter kan ha samma bild).
+- Produkter skall kunna läggas till och tas bort av administratör, egenskaper som skall finnas är Namn, beskrivning, pris, kategor
+
+ÖVRIGT
 - Shoppen skall vara säljande. Den skall ge ett bra intryck och lämpligt upplagd beroende på vad
 som säljs. (Anders R eller motsvarande kikar på designen)
-- Projeket skall vara målgruppsanpassat och funktionellt.
+- Projeket skall vara målgruppsanpassat och funktionellt
+- Projektet dokumenteras dock krävs ingen formell projektrapport. Dokumentationen skall innehålla all den kod som producerats samt dokumentation om databasen(ER‐modeller, mm). Glöm inte bort att infoga bra kommentarer i den kod som skrivs. All dokumentation skall lämnas in via ping‐pong.
 
 DATABASEN
 - Databasen skall vara ”acceptabelt” professionell. 
@@ -39,7 +42,7 @@ DATABASEN
 - Databasen skall vara implementerad på ett vettigt sätt med lämpliga val av primärnycklar och
 främmande nycklar.
 - Databasen skall undvika att lagra onödig redundant information (dvs normaliserad till 3:e normalformen. Viss redundans måste alltid finnas i form av främmande nycklar i tabellerna.)
-- Projektet dokumenteras dock krävs ingen formell projektrapport. Dokumentationen skall innehålla all den kod som producerats samt dokumentation om databasen(ER‐modeller, mm). Glöm inte bort att infoga bra kommentarer i den kod som skrivs. All dokumentation skall lämnas in via ping‐pong.
+
 
 
 ##### För betyg 4 (förutom samtliga punkter för betyg 3):
