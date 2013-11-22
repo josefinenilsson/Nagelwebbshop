@@ -15,8 +15,7 @@ Nedan följer kriterier för vad som måste uppfyllas för en viss betygsnivå.
 KONTON
 - Konton skall ha olika accessnivå beroende på om man är admin eller kund.
 - Konton skall kunna skapas och tas bort av administratör, men nya kudner ska kunna skapa sina egna konton via hemsidan.
-- Produkter skall kunna läggas till och tas bort av administratör
-- Egenskaper som skall finnas är Namn, beskrivning, pris, kategori.
+- Produkter skall kunna läggas till och tas bort av administratör, egenskaper som skall finnas är Namn, beskrivning, pris, kategori.
 
 KUNDKORG
 - En kundkorg skall finnas där man kan se produkter, antal, moms (25%) och summan av sin
