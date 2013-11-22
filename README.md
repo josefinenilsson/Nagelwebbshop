@@ -8,33 +8,33 @@ Nedan följer kriterier för vad som måste uppfyllas för en viss betygsnivå.
 
 ##### För betyg 3:
 - Inloggningsfunktion skall finnas.
-- Man skall kunna bläddra mellan produkter som ligger i olika kategorier. 
+- Man skall kunna bläddra mellan produkter som ligger i olika kategorier.
 - Kategorierna kan vara statiska (admin behöver inte kunna redigera)
 
 
-- KONTON -
+KONTON
 - Konton skall ha olika accessnivå beroende på om man är admin eller kund.
 - Konton skall kunna skapas och tas bort av administratör, men nya kudner ska kunna skapa sina egna konton via hemsidan.
 - Produkter skall kunna läggas till och tas bort av administratör
 - Egenskaper som skall finnas är Namn, beskrivning, pris, kategori.
 
-- KUNDKORG -
+KUNDKORG
 - En kundkorg skall finnas där man kan se produkter, antal, moms (25%) och summan av sin
 beställning.
 
-- ORDER -
+ORDER
 - En order skall innehålla datum och tid, köpare och IP‐adress på den som beställde
 - En order skall i sin tur vara uppbyggd av en eller flera orderrader
 - Administratören skall kunna se alla ordrar som lagts i systemet.
 
 
-- PRODUKTER - 
+PRODUKTER
 - Alla produkter skall ha en representativ produktbild (alla produkter kan ha samma bild).
 - Shoppen skall vara säljande. Den skall ge ett bra intryck och lämpligt upplagd beroende på vad
 som säljs. (Anders R eller motsvarande kikar på designen)
 - Projeket skall vara målgruppsanpassat och funktionellt.
 
-- DATABASEN -
+DATABASEN
 - Databasen skall vara ”acceptabelt” professionell. 
 - Projektgruppen skall ha tagit fram en ER‐modell för databasen där entitetstyper, sambandstyper och deras begränsningar framgår.
 - Databasen skall vara implementerad på ett vettigt sätt med lämpliga val av primärnycklar och
