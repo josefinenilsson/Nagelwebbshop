@@ -1,0 +1,170 @@
+-- phpMyAdmin SQL Dump
+-- version 4.0.6
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Nov 26, 2013 at 10:11 AM
+-- Server version: 5.5.33
+-- PHP Version: 5.5.3
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `Webbshop - Nagellack`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Category`
+--
+
+CREATE TABLE `Category` (
+  `Category_ID` int(10) NOT NULL AUTO_INCREMENT,
+  `Name` text NOT NULL,
+  PRIMARY KEY (`Category_ID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `Category`
+--
+
+INSERT INTO `Category` (`Category_ID`, `Name`) VALUES
+(1, 'Basic'),
+(2, 'Glitter'),
+(3, 'Magnetiskt'),
+(4, 'Holografiskt'),
+(5, 'Graffiti'),
+(6, 'Jelly');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Order`
+--
+
+CREATE TABLE `Order` (
+  `Date` date NOT NULL,
+  `Time` varchar(10) NOT NULL,
+  `Customer` varchar(12) NOT NULL,
+  `IP_Adress` varchar(20) NOT NULL,
+  `ID` varchar(10) NOT NULL,
+  `HasCheckedOut` tinyint(1) NOT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `Customer` (`Customer`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Order_List`
+--
+
+CREATE TABLE `Order_List` (
+  `Order_ID` varchar(10) NOT NULL,
+  `Product_ID` varchar(10) NOT NULL,
+  `Amount` int(11) NOT NULL,
+  KEY `Order_ID` (`Order_ID`),
+  KEY `Product_ID` (`Product_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Products`
+--
+
+CREATE TABLE `Products` (
+  `SerialNumber` varchar(10) NOT NULL,
+  `Name` text NOT NULL,
+  `Description` text NOT NULL,
+  `Price` varchar(5) NOT NULL,
+  `Category_ID` int(10) NOT NULL,
+  PRIMARY KEY (`SerialNumber`),
+  KEY `Category_ID` (`Category_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Products`
+--
+
+INSERT INTO `Products` (`SerialNumber`, `Name`, `Description`, `Price`, `Category_ID`) VALUES
+('1001', 'Depend Blue', 'Blått nagellack', '59 kr', 1),
+('1002', 'Depend Red', 'Rött nagellack', '59 kr', 1),
+('1003', 'Depend Green', 'Grönt nagellack', '59 kr', 1),
+('1004', 'Depend Pink', 'Rosa nagellack', '59 kr', 1),
+('1005', 'Depend Yellow', 'Gult nagellack', '59 kr', 1),
+('1006', 'Depend Purple', 'Lila nagellack', '59 kr', 1),
+('1101', 'Depend Blue Glitter', 'Blåglittrigt nagellack', '79 kr', 2),
+('1102', 'Depend Red Glitter', 'Rödglittrigt nagellack', '79 kr', 2),
+('1103', 'Depend Green Glitter', 'Grönglittrigt nagellack', '79 kr', 2),
+('1104', 'Depend Pink Glitter', 'Rosaglittrigt nagellack', '79 kr', 2),
+('1105', 'Depend Yellow Glitter', 'Gulglittrigt nagellack', '79 kr', 2),
+('1106', 'Depend Purple Glitter', 'Lilaglittrigt nagellack', '79 kr', 2),
+('1201', 'Depend Blue Magnetic', 'Blått magnetiskt nagellack', '69 kr', 3),
+('1202', 'Depend Red Magnetic', 'Rött magnetiskt nagellack', '69 kr', 3),
+('1203', 'Depend Green Magnetic', 'Grönt magnetiskt nagellack', '69 kr', 3),
+('1204', 'Depend Pink Magnetic', 'Rosa magnetiskt nagellack', '69 kr', 3),
+('1205', 'Depend Yellow Magnetic', 'Gult magnetiskt nagellack', '69 kr', 3),
+('1206', 'Depend Purple Magnetic', 'Lila magnetiskt nagellack', '69 kr', 3),
+('1301', 'Depend Blue Holographic', 'Blått holografiskt nagellack', '89 kr', 4),
+('1302', 'Depend Red Holographic', 'Rött holografiskt nagellack', '89 kr', 4),
+('1303', 'Depend Green Holographic', 'Grönt holografiskt nagellack', '89 kr', 4),
+('1304', 'Depend Pink Holographic', 'Rosa holografiskt nagellack', '89 kr', 4),
+('1305', 'Depend Yellow Holographic', 'Gult holografiskt nagellack', '89 kr', 4),
+('1306', 'Depend Purple Holographic', 'Lila holografiskt nagellack', '89 kr', 4),
+('1401', 'Depend Blue Graffiti', 'Blått graffitinagellack', '39 kr', 5),
+('1402', 'Depend Red Graffiti', 'Rött graffitinagellack', '39 kr', 5),
+('1403', 'Depend Green Graffiti', 'Grönt graffitinagellack', '39 kr', 5),
+('1404', 'Depend Pink Graffiti', 'Rosa graffitinagellack', '39 kr', 5),
+('1405', 'Depend Yellow Graffiti', 'Gult graffitinagellack', '39 kr', 5),
+('1406', 'Depend Purple Graffiti', 'Lila graffitinagellack', '39 kr', 5),
+('1501', 'Depend Blue Jelly', 'Blått jellynagellack', '49 kr', 6),
+('1502', 'Depend Red Jelly', 'Rött jellynagellack', '49 kr', 6),
+('1503', 'Depend Green Jelly', 'Grönt jellynagellack', '49 kr', 6),
+('1504', 'Depend Pink Jelly', 'Rosa jellynagellack', '49 kr', 6),
+('1505', 'Depend Yellow Jelly', 'Gult jellynagellack', '49 kr', 6),
+('1506', 'Depend Purple Jelly', 'Lila jellynagellack', '49 kr', 6);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `User`
+--
+
+CREATE TABLE `User` (
+  `Firstname` text NOT NULL,
+  `Lastname` text NOT NULL,
+  `Email` varchar(40) NOT NULL,
+  `Adress` text NOT NULL,
+  `SSN` varchar(12) NOT NULL,
+  `Phonenumber` varchar(10) NOT NULL,
+  `Password` varchar(16) NOT NULL,
+  `isAdmin` tinyint(1) NOT NULL,
+  PRIMARY KEY (`SSN`),
+  UNIQUE KEY `Email` (`Email`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `Order`
+--
+ALTER TABLE `Order`
+  ADD CONSTRAINT `order_ibfk_1` FOREIGN KEY (`Customer`) REFERENCES `user` (`SSN`);
+
+--
+-- Constraints for table `Order_List`
+--
+ALTER TABLE `Order_List`
+  ADD CONSTRAINT `order_list_ibfk_2` FOREIGN KEY (`Product_ID`) REFERENCES `Products` (`SerialNumber`),
+  ADD CONSTRAINT `order_list_ibfk_1` FOREIGN KEY (`Order_ID`) REFERENCES `Order` (`ID`);
+
+--
+-- Constraints for table `Products`
+--
+ALTER TABLE `Products`
+  ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`Category_ID`) REFERENCES `Category` (`Category_ID`);
