@@ -1,5 +1,5 @@
 <?php
-
+### Connects to database ###
 class database extends mysqli {
     public function __construct($host, $user, $pass, $db) {
         parent::__construct($host, $user, $pass, $db);
@@ -9,18 +9,27 @@ class database extends mysqli {
                     . mysqli_connect_error());
         }
     }
+	
+	### Add product ###
 	public function db_AddProduct(){
-		parent::query('INSERT INTO `Products`(`SerialNumber`, `Name`, `Description`, `Price`, `Category_ID`, `Product_image`) VALUES ("575757","Korv","Korv med bröd","20",1,"korv.jpg")');
+		$this->query('INSERT INTO `Products`(`SerialNumber`, `Name`, `Description`, `Price`, `Category_ID`, `Product_image`) VALUES ('.$serialNumber.','.$productName.','.$productDescr.','.$productPrice.','.$category_ID.','.$productImage.')');
 		echo "db_AddProduct()";
 			
 	}
+	
+	### Delete product ###
+	public function db_DeleteProduct(){
+		$this->query('DELETE FROM `webshop`.`Products` WHERE `Products`.`SerialNumber` = '.$serialNumber.'');
+		echo "db_DeleteProduct()";
+	}
 }
 
-$db = new database('localhost', 'root', 'root', 'webshop');
-$db->db_AddProduct();
+$db = new database('localhost', 'root', 'root', 'webshop'); // Connects to database here
+//$db->db_AddProduct(); 									   	// Add product function runs here
+$db->db_DeleteProduct();									// Delete product function runs here
 
 
-echo 'Success...1 ' . $db->host_info . "\n";
+echo 'Success...3 ' . $db->host_info . "\n";
 
 /*
 $database = new Database("localhost","root","root","webshop");
