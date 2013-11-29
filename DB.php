@@ -22,14 +22,20 @@ class database extends mysqli {
 		$this->query('DELETE FROM `webshop`.`Products` WHERE `Products`.`SerialNumber` = '.$serialNumber.'');
 		echo "db_DeleteProduct()";
 	}
+	
+	### Change product ###
+	public function db_ChangeProduct(){
+		$this->query('UPDATE "Products" SET "Name"="korv" WHERE "Name"="Depend Blue"');
+	}
 }
 
 $db = new database('localhost', 'root', 'root', 'webshop'); // Connects to database here
 //$db->db_AddProduct(); 									   	// Add product function runs here
-$db->db_DeleteProduct();									// Delete product function runs here
+//$db->db_DeleteProduct();									// Delete product function runs here
+$db->db_ChangeProduct();									// Change product function runs here
 
 
-echo 'Success...3 ' . $db->host_info . "\n";
+echo 'Success...4 ' . $db->host_info . "\n";
 
 /*
 $database = new Database("localhost","root","root","webshop");
