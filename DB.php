@@ -203,7 +203,7 @@ $db = new Database('localhost', 'root', 'root', 'webshop'); // Connects to datab
 //$db->db_AddOrder();										// Add order function runs here
 
 
-echo 'Success... ' . $db->host_info . "\n";
+echo 'Success... Hejhej!' . $db->host_info . "\n";
 
 
 ?>
