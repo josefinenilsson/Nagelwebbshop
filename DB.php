@@ -44,7 +44,7 @@ class Database extends mysqli {
 	########################### */
 	
 	public function db_ChangeProduct(){
-		$this->query('UPDATE "Products" SET "$productName"="$newProductName" WHERE "Name"="Depend Blue"');
+		$this->query('UPDATE "Products" SET "Name" ='.$newProductName.' WHERE "Serialnumber"= '.$serialNumber.'');
 	}
 	// Here we need to figure out what we want to change in the change function, and add variabels.
 	
@@ -67,10 +67,24 @@ class Database extends mysqli {
 	########################### */
 	
 	public function db_AddUser(){
-		$this->query('INSERT INTO `User`(`Firstname`, `Lastname`, `Email`, `Adress`, `SSN`, `Phonenumber`, `Password`, `isAdmin`) VALUES ("Josefine","Nilsson","josefine.h.nilsson93@gmail.com","Hermansvägen 104","199302184966","0766120150","hejhej","false")');
+		$this->query('INSERT INTO `User`(`Firstname`, `Lastname`, `Email`, `Adress`, `SSN`, `Phonenumber`, `Password`, `isAdmin`) VALUES ('.$firstname.','.$lastname.','.$email.','.$adress.','.$SSn.','.$phonenumber.','.$password.','.$isAdmin.')');
 		echo "db_AddUser()";
 	}
-	// We need to add variables here instead of my name stuff
+		
+/* 	########################### 
+		Delete User
+	########################### */	
+	public function db_DeleteUser(){
+		$this->query('DELETE FROM `webshop`.`User` WHERE `User`.`SSN` = '.$SSn.'');
+	}
+	
+/* 	########################### 
+		Change User
+	########################### */
+	public function db_ChangeUser(){
+		$this->query('UPDATE "User" SET "Email" ='.$email.'   WHERE "SSN"='.$SSn.'');
+	}
+	// Here we need to figure out what we want to change in the change function, and add variabels.
 	
 	
 	
@@ -78,6 +92,29 @@ class Database extends mysqli {
 #################################################################################################################################################
 											/* DATABASE USER FUNCTIONS ENDS */
 #################################################################################################################################################
+
+	
+	
+	
+/* 	########################### 
+		Add Order
+	########################### */
+	
+public function db_AddOrder(){
+	$this->query('INSERT INTO `Order`(`Date`, `Time`, `Customer`, `IP_Adress`, `ID`, `HasCheckedOut`) VALUES ("20131202","20:00","199302184966","8654790","8u89","true")');
+	echo "db_AddOrder() 1";
+}
+// Need to add variables	
+	
+	
+	
+	
+	#################################################################################################################################################
+											/* DATABASE ORDER FUNCTIONS START  */
+#################################################################################################################################################
+	
+	
+	
 	
 	
 	
@@ -87,7 +124,10 @@ $db = new Database('localhost', 'root', 'root', 'webshop'); // Connects to datab
 //$db->db_AddProduct(); 									// Add product function runs here
 //$db->db_DeleteProduct();									// Delete product function runs here
 //$db->db_ChangeProduct();									// Change product function runs here
-$db->db_AddUser();											// Add user function runs here
+//$db->db_AddUser();										// Add user function runs here
+//$db->db_DeleteUser();										// Delete user function runs here
+//$db->db_ChangeUser();										// Change user function runs here
+//$db->db_AddOrder();										// Add order function runs here
 
 
 echo 'Success... ' . $db->host_info . "\n";
