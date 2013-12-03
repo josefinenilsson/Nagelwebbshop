@@ -64,7 +64,7 @@ class Database extends mysqli {
 	public function db_GetProducts(){
 		$this->query('SELECT * FROM ´Products´ WHERE 'Category = "1"'');
 }
-	
+	// Inte klar!
 	
 #################################################################################################################################################
 											/* DATABASE PRODUCT FUNCTIONS ENDS */
@@ -153,7 +153,7 @@ class Database extends mysqli {
 	public function db_ListOrders(){
 		$this->query('SELECT * FROM ');
 	}
-	
+	// INTE KLAR
 	
 	
 	#################################################################################################################################################
