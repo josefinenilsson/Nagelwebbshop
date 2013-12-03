@@ -26,7 +26,7 @@ class Database extends mysqli {
 	
 	public function db_AddProduct(){
 		$this->query('INSERT INTO `Products`(`SerialNumber`, `Name`, `Description`, `Price`, `Category_ID`, `Product_image`) VALUES ('.$serialNumber.','.$productName.','.$productDescr.','.$productPrice.','.$category_ID.','.$productImage.')');
-		echo "db_AddProduct()";
+		
 			
 	}
 	
@@ -36,7 +36,7 @@ class Database extends mysqli {
 	
 	public function db_DeleteProduct(){
 		$this->query('DELETE FROM `webshop`.`Products` WHERE `Products`.`SerialNumber` = '.$serialNumber.'');
-		echo "db_DeleteProduct()";
+		
 	}
 	
 /* 	########################### 
@@ -46,8 +46,24 @@ class Database extends mysqli {
 	public function db_ChangeProduct(){
 		$this->query('UPDATE "Products" SET "Name" ='.$newProductName.' WHERE "Serialnumber"= '.$serialNumber.'');
 	}
-	// Here we need to figure out what we want to change in the change function, and add variabels.
+	// Here we need to figure out what we want to change in the change function
 	
+/* 	########################### 
+		List Products
+	########################### */
+	
+	public function db_ListProducts(){
+		$this->query('SELECT * FROM');
+	}
+	// INTE KLAR
+	
+/* 	########################### 
+		Get Products
+	########################### */
+	
+	public function db_GetProducts(){
+		$this->query('SELECT * FROM ´Products´ WHERE 'Category = "1"'');
+}
 	
 	
 #################################################################################################################################################
@@ -68,7 +84,7 @@ class Database extends mysqli {
 	
 	public function db_AddUser(){
 		$this->query('INSERT INTO `User`(`Firstname`, `Lastname`, `Email`, `Adress`, `SSN`, `Phonenumber`, `Password`, `isAdmin`) VALUES ('.$firstname.','.$lastname.','.$email.','.$adress.','.$SSn.','.$phonenumber.','.$password.','.$isAdmin.')');
-		echo "db_AddUser()";
+	
 	}
 		
 /* 	########################### 
@@ -84,7 +100,7 @@ class Database extends mysqli {
 	public function db_ChangeUser(){
 		$this->query('UPDATE "User" SET "Email" ='.$email.'   WHERE "SSN"='.$SSn.'');
 	}
-	// Here we need to figure out what we want to change in the change function, and add variabels.
+	// Here we need to figure out what we want to change in the change function
 	
 	
 	
@@ -93,6 +109,12 @@ class Database extends mysqli {
 											/* DATABASE USER FUNCTIONS ENDS */
 #################################################################################################################################################
 
+
+	
+	#################################################################################################################################################
+											/* DATABASE ORDER FUNCTIONS START  */
+#################################################################################################################################################
+	
 	
 	
 	
@@ -100,17 +122,68 @@ class Database extends mysqli {
 		Add Order
 	########################### */
 	
-public function db_AddOrder(){
-	$this->query('INSERT INTO `Order`(`Date`, `Time`, `Customer`, `IP_Adress`, `ID`, `HasCheckedOut`) VALUES ("20131202","20:00","199302184966","8654790","8u89","true")');
-	echo "db_AddOrder() 1";
+	public function db_AddOrder(){
+		$this->query('INSERT INTO `Order`(`Date`, `Time`, `Customer`, `IP_Adress`, `ID`, `HasCheckedOut`) VALUES 		 	 ('.$date.','.$time.','.$SSn.','.$IPadress.','.$serialNumber.','.$hasCheckedOut.')');
+	
 }
-// Need to add variables	
+	
+/* 	########################### 
+		Delete Order
+	########################### */	
+	
+	public function db_DeleteOrder(){
+		$this->query('DELETE FROM `webshop`.`Order` WHERE `User`.`SSN` = '.$SSn.'');
+	}
+// Denna är inte klar än
+	
+/* 	########################### 
+		Change Order
+	########################### */
+	
+	public function db_ChangeOrder(){
+		$this->query('UPDATE "Order" SET "Email" ='.$email.'   WHERE "SSN"='.$SSn.'');
+	}
+// Denna är inte heller klar!
+	
+	
+/* 	########################### 
+		List Orders
+	########################### */
+	
+	public function db_ListOrders(){
+		$this->query('SELECT * FROM ');
+	}
+	
+	
+	
+	#################################################################################################################################################
+											/* DATABASE ORDER FUNCTIONS ENDS  */
+#################################################################################################################################################
+	
+	
+	
+	#################################################################################################################################################
+											/* DATABASE CATEGORY FUNCTIONS START  */
+#################################################################################################################################################
+	
+	
+	
+/* 	########################### 
+		List Categories
+	########################### */
+	public function db_ListCategories(){
+		$this->query('');
+	}
+	
+// Inte färdig!!!
+	
+
 	
 	
 	
 	
 	#################################################################################################################################################
-											/* DATABASE ORDER FUNCTIONS START  */
+											/* DATABASE CATEGORY FUNCTIONS ENDS  */
 #################################################################################################################################################
 	
 	
