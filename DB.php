@@ -24,9 +24,9 @@ class Database extends mysqli {
 		Add product 
 	########################### */
 	
-	public function db_AddProduct(){
+	public function db_AddProduct($serialNumber,$productName,$productDescr,$productPrice,$category_ID,$productImage){
 		$this->query('INSERT INTO `Products`(`SerialNumber`, `Name`, `Description`, `Price`, `Category_ID`, `Product_image`) VALUES ('.$serialNumber.','.$productName.','.$productDescr.','.$productPrice.','.$category_ID.','.$productImage.')');
-		
+		echo "db_AddProduct()";
 			
 	}
 	
@@ -44,9 +44,9 @@ class Database extends mysqli {
 	########################### */
 	
 	public function db_ChangeProduct(){
-		$this->query('UPDATE "Products" SET "Name" ='.$newProductName.' WHERE "Serialnumber"= '.$serialNumber.'');
+		$this->query('UPDATE `Products` SET `Name`= '.$productName.',`Description`= '.$productDescr.',`Price`= '.$productPrice.' WHERE `Serialnumber`= '.$serialNumber.'');
 	}
-	// Here we need to figure out what we want to change in the change function
+	
 	
 /* 	########################### 
 		List Products
@@ -60,9 +60,8 @@ class Database extends mysqli {
 /* 	########################### 
 		Get Products
 	########################### */
-	
-	public function db_GetProducts(){
-		$this->query('SELECT * FROM ´Products´ WHERE 'Category = "1"'');
+	public function db_GetProducts($id){ 
+		$this->query('SELECT * FROM "Products" WHERE "Category" = "'.$id.'"');
 }
 	// Inte klar!
 	
@@ -98,9 +97,9 @@ class Database extends mysqli {
 		Change User
 	########################### */
 	public function db_ChangeUser(){
-		$this->query('UPDATE "User" SET "Email" ='.$email.'   WHERE "SSN"='.$SSn.'');
+		$this->query('UPDATE `User` SET `Email`= '.$email.',`Adress`= '.$adress.',`Phonenumber`= '.$phonenumber.',`Password`= '.$password.' WHERE `SSN` = ');
 	}
-	// Here we need to figure out what we want to change in the change function
+
 	
 	
 	
@@ -141,7 +140,7 @@ class Database extends mysqli {
 	########################### */
 	
 	public function db_ChangeOrder(){
-		$this->query('UPDATE "Order" SET "Email" ='.$email.'   WHERE "SSN"='.$SSn.'');
+		$this->query('');
 	}
 // Denna är inte heller klar!
 	
@@ -201,6 +200,10 @@ $db = new Database('localhost', 'root', 'root', 'webshop'); // Connects to datab
 //$db->db_DeleteUser();										// Delete user function runs here
 //$db->db_ChangeUser();										// Change user function runs here
 //$db->db_AddOrder();										// Add order function runs here
+
+
+
+$db->db_AddUser($_POST['name'], $_POST['lastname'], );
 
 
 echo 'Success... Hejhej!' . $db->host_info . "\n";
