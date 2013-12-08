@@ -18,16 +18,17 @@ class Database extends mysqli {
 											/* DATABASE PRODUCT FUNCTIONS START */
 #################################################################################################################################################
 												 
-												 
 	
 /* 	########################### 
 		Add product 
 	########################### */
 	
 	public function db_AddProduct($serialNumber,$productName,$productDescr,$productPrice,$category_ID,$productImage){
-		$this->query('INSERT INTO `Products`(`SerialNumber`, `Name`, `Description`, `Price`, `Category_ID`, `Product_image`) VALUES ('.$serialNumber.','.$productName.','.$productDescr.','.$productPrice.','.$category_ID.','.$productImage.')');
-		echo "db_AddProduct()";
-			
+		if($this->query( 'INSERT INTO `Products`(`SerialNumber`, `Name`, `Description`, `Price`, `Category_ID`, `Product_image`) VALUES ("'.$serialNumber.'","'.$productName.'","'.$productDescr.'","'.$productPrice.'","'.$category_ID.'","'.$productImage.'")')){
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 /* 	########################### 
@@ -193,20 +194,13 @@ class Database extends mysqli {
 } // Here ends the class Database
 
 $db = new Database('localhost', 'root', 'root', 'webshop'); // Connects to database here
-//$db->db_AddProduct(); 									// Add product function runs here
+//$db->db_AddProduct($serialNumber,$productName,$productDescr,$productPrice,$category_ID,$productImage); 									// Add product function runs here
 //$db->db_DeleteProduct();									// Delete product function runs here
 //$db->db_ChangeProduct();									// Change product function runs here
 //$db->db_AddUser();										// Add user function runs here
 //$db->db_DeleteUser();										// Delete user function runs here
 //$db->db_ChangeUser();										// Change user function runs here
 //$db->db_AddOrder();										// Add order function runs here
-
-
-
-$db->db_AddUser($_POST['name'], $_POST['lastname'], );
-
-
-echo 'Success... Hejhej!' . $db->host_info . "\n";
 
 
 ?>
