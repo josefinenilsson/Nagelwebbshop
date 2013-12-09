@@ -1,3 +1,6 @@
+<meta http-equiv="content-type"
+      content="text/html;charset=utf-8" />
+
 <form action="adduser.php" method="post" enctype="multipart/form-data">
         <table>
             <tr>
