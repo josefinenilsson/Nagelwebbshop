@@ -191,7 +191,11 @@ class Database extends mysqli {
 		List Categories
 	########################### */
 	public function db_ListCategories(){
-		$this->query('');
+		if($this->query('SELECT * FROM `Category` ')){
+		return true;
+		} else{
+		return false;
+		}
 	}
 	
 // Inte färdig!!!
