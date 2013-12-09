@@ -49,8 +49,9 @@ include "DB.php"; // Includes the database
 /* This function takes the data form the form and saves it in the database, and creates a user */
 
 
-if(isset($_POST["submit"])) {
-	if($db->db_AddUser($_POST["Firstname"],$_POST["Lastname"],$_POST["Email"],$_POST["Adress"],$_POST["SSN"],$_POST["Phonenumber"],$_POST["Password"],false)){
+if(isset($_POST["submit"])) { 
+	
+	if($db->db_AddUser($_POST["Firstname"],$_POST["Lastname"],$_POST["Email"],$_POST["Adress"],$_POST["SSN"],$_POST["Phonenumber"],$_POST["Password"],"false")){
 			echo "Success!";
 		} else {
 			echo "Failure!";

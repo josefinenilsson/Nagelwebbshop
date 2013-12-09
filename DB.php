@@ -29,6 +29,8 @@ class Database extends mysqli {
 		} else {
 			return false;
 		}
+		
+		
 	}
 	
 /* 	########################### 
@@ -91,8 +93,11 @@ class Database extends mysqli {
 	########################### */
 	
 	public function db_AddUser($firstname,$lastname,$email,$adress,$SSn,$phonenumber,$hashedPassword,$isAdmin){
-		$this->query('INSERT INTO `User`(`Firstname`, `Lastname`, `Email`, `Adress`, `SSN`, `Phonenumber`, `Password`, `isAdmin`) VALUES ("'.$firstname.'","'.$lastname.'","'.$email.'","'.$adress.'","'.$SSn.'","'.$phonenumber.'","'.$hashedPassword.'","'.$isAdmin.'")');
-	
+		 if($this->query('INSERT INTO `User`(`Firstname`, `Lastname`, `Email`, `Adress`, `SSN`, `Phonenumber`, `Password`, `isAdmin`) VALUES ("'.$firstname.'","'.$lastname.'","'.$email.'","'.$adress.'","'.$SSn.'","'.$phonenumber.'","'.$hashedPassword.'",'.$isAdmin.')')){
+		 return true;
+		 } else{
+		 return false;
+		 }
 	}
 		
 /* 	########################### 
@@ -211,7 +216,7 @@ $db = new Database('localhost', 'root', 'root', 'webshop'); // Connects to datab
 //$db->db_AddProduct($serialNumber,$productName,$productDescr,$productPrice,$category_ID,$productImage); 									// Add product function runs here
 //$db->db_DeleteProduct();									// Delete product function runs here
 //$db->db_ChangeProduct();									// Change product function runs here
-//$db->db_AddUser();										// Add user function runs here
+$db->db_AddUser("Jos","Nilsson","jos@jos.jos","hejvägen 2","9302184966","0766120150","hejhejhej", false);										// Add user function runs here
 //$db->db_DeleteUser();										// Delete user function runs here
 //$db->db_ChangeUser();										// Change user function runs here
 //$db->db_AddOrder();										// Add order function runs here
