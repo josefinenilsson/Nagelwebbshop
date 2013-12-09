@@ -31,7 +31,7 @@
             </tr>
         </table>
 <?php
-include "DB.php";
+include "DB.php"; // Includes the database
 
 
 
@@ -39,13 +39,16 @@ include "DB.php";
 	Add product function
 	########################### */	
 
+/* This function takes the data form the form and saves it in the database. */
+
+
 	if(isset($_POST["submit"])) {
 		if($db->db_AddProduct($_POST["SerialNumber"],$_POST["Name"],$_POST["Description"],$_POST["Price"],$_POST["Category_ID"],$_POST["Product_image"])){
 			echo "Success!";
 		} else {
 			echo "Failure!";
 		}		
-	}
+	} // Function ends here
 
 
 

@@ -36,7 +36,11 @@ class Database extends mysqli {
 	########################### */
 	
 	public function db_DeleteProduct(){
-		$this->query('DELETE FROM `webshop`.`Products` WHERE `Products`.`SerialNumber` = '.$serialNumber.'');
+		if($this->query('DELETE FROM `webshop`.`Products` WHERE `Products`.`SerialNumber` = "'.$serialNumber.'"')){
+		return true;
+		} else{
+		return false;
+		}
 		
 	}
 	
@@ -44,8 +48,12 @@ class Database extends mysqli {
 		Change product
 	########################### */
 	
-	public function db_ChangeProduct(){
-		$this->query('UPDATE `Products` SET `Name`= '.$productName.',`Description`= '.$productDescr.',`Price`= '.$productPrice.' WHERE `Serialnumber`= '.$serialNumber.'');
+	public function db_ChangeProduct($productName,$productDescr,$productPrice,$serialNumber){
+		if($this->query('UPDATE `Products` SET `Name`= "'.$productName.'",`Description`= "'.$productDescr.'",`Price`= "'.$productPrice.'" WHERE `Serialnumber`= "'.$serialNumber.'"')){
+		return true;
+		} else {
+		return false;
+		}
 	}
 	
 	
@@ -82,8 +90,8 @@ class Database extends mysqli {
 		Add User
 	########################### */
 	
-	public function db_AddUser(){
-		$this->query('INSERT INTO `User`(`Firstname`, `Lastname`, `Email`, `Adress`, `SSN`, `Phonenumber`, `Password`, `isAdmin`) VALUES ('.$firstname.','.$lastname.','.$email.','.$adress.','.$SSn.','.$phonenumber.','.$password.','.$isAdmin.')');
+	public function db_AddUser($firstname,$lastname,$email,$adress,$SSn,$phonenumber,$hashedPassword,$isAdmin){
+		$this->query('INSERT INTO `User`(`Firstname`, `Lastname`, `Email`, `Adress`, `SSN`, `Phonenumber`, `Password`, `isAdmin`) VALUES ("'.$firstname.'","'.$lastname.'","'.$email.'","'.$adress.'","'.$SSn.'","'.$phonenumber.'","'.$hashedPassword.'","'.$isAdmin.'")');
 	
 	}
 		
@@ -100,6 +108,12 @@ class Database extends mysqli {
 	public function db_ChangeUser(){
 		$this->query('UPDATE `User` SET `Email`= '.$email.',`Adress`= '.$adress.',`Phonenumber`= '.$phonenumber.',`Password`= '.$password.' WHERE `SSN` = ');
 	}
+	
+	/* 	########################### 
+		Hash password
+	########################### */
+	
+	//$hashedPassword = hash($password."ctf78j34mx8jtr23kezjt3r32");
 
 	
 	
