@@ -1,8 +1,7 @@
 body {
-	font-family: gothic century, arial, sans-serif; 
+	font-family: cambria, sans-serif; 
 	font-size: 13px;
-	background: url(../img/bg.jpg);
-
+	background: url('../img/bg.jpg');
 
 }
 
@@ -21,13 +20,19 @@ body {
 }
 
 .h1title {
-	margin: 30px;
+	margin-top: 5px;
+	margin-left: 40px;
+	font-family: Edwardian Script ITC; 
 	text-align: left;
+	font-size: 50px;
 }
 
 #mainmenu{
 	height:26px;
 	margin-top: -33;
+	font-family: Edwardian Script ITC;
+	font-size: 30px;
+	border: 1px solid #d7d7d7;
 }
 
 #mainmenu ul {
@@ -39,6 +44,13 @@ body {
 #mainmenu ul li {
 	display: inline-block;
 	margin-right: -4px;
+	border: 1px solid #d7d7d7;
+	border-radius: 4px;
+	padding-right: 20px;
+	padding-left: 20px;
+	margin-left: 40px;
+	margin-right: 40px;
+
 }
 
 #mainmenu ul li a {
