@@ -87,7 +87,8 @@ img {
 /* Kategorisidan */
 
 .category{
-	float:left
+	float:left;
+	width: 200px;
 }
 
 .categoryimg{

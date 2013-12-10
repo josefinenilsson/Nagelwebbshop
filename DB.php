@@ -78,9 +78,20 @@ class Database extends mysqli {
 	########################### */
 // Here we have a function that get all data from the database where the category is specified.	
 	
-	public function db_GetProducts($id){ 
-		$this->query('SELECT * FROM "Products" WHERE "Category" = "'.$id.'"');
-}
+
+	public function db_GetProducts($category_ID){
+		if ($result = $this->query('SELECT * FROM `Products` WHERE `Category_ID` = "'.$category_ID.'" ')) {
+			$i=0;
+			while($row = mysqli_fetch_assoc($result)){
+				$category_get[$i] = $row;
+				$i++;
+			}
+			return $category_get;
+		} else{
+			return false;
+			}
+	}	
+    
 	// Inte klar!
 	
 #################################################################################################################################################
@@ -198,6 +209,8 @@ class Database extends mysqli {
 /* 	########################### 
 		List Categories
 	########################### */
+	
+	
 	public function db_ListCategories(){
 		if ($result = $this->query('SELECT * FROM `Category` ')) {
 			$i=0;
@@ -211,8 +224,7 @@ class Database extends mysqli {
 			}
 	}	
     
-// Inte färdig!!!
-	
+
 
 	
 	
