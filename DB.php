@@ -38,6 +38,7 @@ class Database extends mysqli {
 /* 	########################### 
 		Delete product
 	########################### */
+// Here we have a function that deletes data from the database, in this case it deletes a product
 	
 	public function db_DeleteProduct(){
 		if($this->query('DELETE FROM `webshop`.`Products` WHERE `Products`.`SerialNumber` = "'.$serialNumber.'"')){
@@ -51,6 +52,7 @@ class Database extends mysqli {
 /* 	########################### 
 		Change product
 	########################### */
+// Here we have a function that updates data from the database, in this case we use it to change the information about the product
 	
 	public function db_ChangeProduct($productName,$productDescr,$productPrice,$serialNumber){
 		if($this->query('UPDATE `Products` SET `Name`= "'.$productName.'",`Description`= "'.$productDescr.'",`Price`= "'.$productPrice.'" WHERE `Serialnumber`= "'.$serialNumber.'"')){
@@ -64,15 +66,18 @@ class Database extends mysqli {
 /* 	########################### 
 		List Products
 	########################### */
+// Here we have a function that get all the data from the database, this one gets all the products in an array
 	
 	public function db_ListProducts(){
-		$this->query('SELECT * FROM');
+		$this->query('SELECT * FROM `Products`');
 	}
 	// INTE KLAR
 	
 /* 	########################### 
 		Get Products
 	########################### */
+// Here we have a function that get all data from the database where the category is specified.	
+	
 	public function db_GetProducts($id){ 
 		$this->query('SELECT * FROM "Products" WHERE "Category" = "'.$id.'"');
 }
