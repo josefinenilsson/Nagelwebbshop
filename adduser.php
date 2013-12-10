@@ -60,7 +60,7 @@
             </tr>
         </table>
 </article>
-    <footer> Kontakta oss på webshop@skolarbete.se</footer>
+    <footer> <p id="footertext">Kontakta oss på webshop@skolarbete.se</p></footer>
 </body>        
 
 <?php

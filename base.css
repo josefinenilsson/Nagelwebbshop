@@ -1,23 +1,23 @@
 body {
 	font-family: gothic century, arial, sans-serif; 
 	font-size: 13px;
-	background: url(../img/bg.jpg) no-repeat;
+	background: url(../img/bg.jpg);
 
 
 }
 
 #wrapper {
-	width:940px;
+	width:1040px;
 	margin:auto;
 	border-left: 1px solid #d7d7d7;
 	border-right: 1px solid #d7d7d7;
 }
 
 #header{
-	background-color: lightpink;
 	height:100px;
 	margin-bottom: 4px;
 	padding-top: 21px;
+	border: 1px solid #d7d7d7;
 }
 
 .h1title {
@@ -52,26 +52,32 @@ body {
 
 button {
 	float: right;
+	margin-top: -22px;
 }
 
 form {
-	margin-right: 30px;
-	float: right;
+	width: 300px;
 }
-
 
 article {
-	background-color: lightyellow;
+	margin-top: 10px;
+	margin-left: 10px;
 }
+
 
 img {
-	float: left;
+	border-radius: 1px;
 }
 
+
 footer{
-	background-color: lightblue;
-	height: 90px;
-	position: relative;
+	height: 40px;
+	border: 1px solid #d7d7d7
+}
+
+#footertext {
+	margin-top: 10px;
+	margin-left: 5px;
 }
 
 
