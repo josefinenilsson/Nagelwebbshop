@@ -1,7 +1,11 @@
 <meta http-equiv="content-type"
       content="text/html;charset=utf-8" />
 <head>
+<<<<<<< HEAD
     <link rel="stylesheet" type="text/css" href="base.css"/>
+=======
+    <link rel="stylesheet" type="text/css" href="base.css">
+>>>>>>> 6f9e8bc04d886717590792d6059cf87dd3be8518
 </head
 <body>
 <div id="wrapper">
