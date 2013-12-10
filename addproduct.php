@@ -1,11 +1,16 @@
 <meta http-equiv="content-type"
       content="text/html;charset=utf-8" />
 <head>
+<<<<<<< HEAD
 
 
     <link rel="stylesheet" type="text/css" href="base.css">
 
 </head
+=======
+    <link rel="stylesheet" type="text/css" href="base.css">
+</head>
+>>>>>>> 3aaea2ae254bc0afdeef5ca774f00b184437d262
 <body>
 <div id="wrapper">
     <header id="header">
