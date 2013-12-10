@@ -1,6 +1,6 @@
 <?php
 require "DB.php"; // Includes the database
-echo "Test";
+
 
 $categories[] = $db->db_ListCategories();
 
