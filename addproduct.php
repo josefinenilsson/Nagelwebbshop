@@ -1,7 +1,7 @@
 <meta http-equiv="content-type"
       content="text/html;charset=utf-8" />
 <head>
-    <link rel="stylesheet" type="text/css" href="SKRIV FILNAMN HÄR.css"/>
+    <link rel="stylesheet" type="text/css" href="base.css">
 </head
 <body>
 <div id="wrapper">
