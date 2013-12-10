@@ -1,16 +1,15 @@
-
-
-
 <?php
 include "DB.php"; // Includes the database
 
-// GET ARRAY FROM DATABASE WITH CATEGORIES
-// LOOP THROUGH ARRAY
-// PROFIT!!!!
-$categories[];
-for {
-	echo '<div>';
-	echo '<a href="/?page=categories&category='.categories[$i]['categoryid'].'"><img src="'.categories[$i]['category_image'].'"></a>';
-	echo '</div>';
+ $categories = db_ListCategories();
+if($categories == false){
+     return "Error";
+} else {
+    for ($i = 0; $i < $categories.count(); $i++){ 
+        echo '<div>';
+        echo '<a href="/?page=categories&category='.categories[$i]('Category_ID');.'"><img src="'.categories[$i]('Category_image');.'"></a>';
+		echo '<h3>'.categories[$i]('Name');</h3>;
+        echo '</div>';
+    }
 }
 ?>

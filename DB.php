@@ -2,6 +2,7 @@
 /* 	########################### 
 		Connects to database 
 	########################### */
+// Here we create the Database class and connects to the database
 
 class Database extends mysqli { 
 	
@@ -22,6 +23,7 @@ class Database extends mysqli {
 /* 	########################### 
 		Add product 
 	########################### */
+// Here we have a function that inserts data to the database, in this case it adds a product
 	
 	public function db_AddProduct($serialNumber,$productName,$productDescr,$productPrice,$category_ID,$productImage){
 		if($this->query( 'INSERT INTO `Products`(`SerialNumber`, `Name`, `Description`, `Price`, `Category_ID`, `Product_image`) VALUES ("'.$serialNumber.'","'.$productName.'","'.$productDescr.'","'.$productPrice.'","'.$category_ID.'","'.$productImage.'")')){
@@ -191,13 +193,13 @@ class Database extends mysqli {
 		List Categories
 	########################### */
 	public function db_ListCategories(){
-		if($this->query('SELECT * FROM `Category` ')){
-		return true;
+		if ($result = $mysqli->query('SELECT * FROM `Category` ')) {
+			return $result->fetch_array(MYSQLI_NUM);
 		} else{
-		return false;
-		}
-	}
-	
+			return false;
+			}
+	}	
+    
 // Inte färdig!!!
 	
 
