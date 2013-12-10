@@ -18,9 +18,11 @@
     </ul>
 </nav>
 
+    <button type="button">Kundkorg</button>
+
 <article>
     <img src="img/depend.jpg">
-    <section id="login">
+
 
 <form action="adduser.php" method="post" enctype="multipart/form-data">
         <table>
@@ -45,7 +47,7 @@
                 <td><input type="text" name="SSN"</td>
             </tr>
 			<tr>
-                <td>Telefonnummerr</td>
+                <td>Telefonnummer</td>
                 <td><input type="text" name="Phonenumber"</td>
             </tr>
 			<tr>
@@ -57,9 +59,8 @@
                 <td><input type="submit" name="submit"</td>
             </tr>
         </table>
-    </section>
 </article>
-<footer> Kontakta oss på webshop@skolarbete.se</footer>
+    <footer> Kontakta oss på webshop@skolarbete.se</footer>
 </body>        
 
 <?php
