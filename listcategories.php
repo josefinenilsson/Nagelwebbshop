@@ -1,11 +1,12 @@
 <?php
-include "DB.php"; // Includes the database
+require "DB.php"; // Includes the database
+echo "Test";
 
- $categories = db_ListCategories();
+$categories[] = $db->db_ListCategories();
 
 var_dump($categories);
 
-/* if($categories == false){
+if($categories == false){
      return "Error";
 }  else {
     for ($i = 0; $i < $categories.count(); $i++){ 
@@ -14,5 +15,5 @@ var_dump($categories);
 		echo '<h3>'.categories[$i]['Name'].'</h3>';
         echo '</div>';
     }
-} */
+}
 ?>
