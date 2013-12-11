@@ -88,21 +88,39 @@ img {
 
 .category{
 	float:left;
-	width: 200px;
+	width: 299px;
 	display:inline-block;
 	padding-top:50px;
+	padding-left:45px;
+	margin:auto;
+	
 }
 
 .category img{
 	border: 1px solid #000;
-	width: 165px;
+	width: 200px;
 	height:auto;
+	margin-left: 22px;
 
 }
 
-.category:nth-child(4n+0){
+.category:nth-child(4n+3){
 clear:both
 }
+
+.category h3 {
+	padding-right:45px;
+	text-align:center;
+}
+
+.category p{
+	width:200px;
+	padding-left:22px;
+	text-align:center;
+	
+}
+
+
 
 
 

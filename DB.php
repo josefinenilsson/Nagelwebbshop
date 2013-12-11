@@ -69,9 +69,22 @@ class Database extends mysqli {
 // Here we have a function that get all the data from the database, this one gets all the products in an array
 	
 	public function db_ListProducts(){
-		$this->query('SELECT * FROM `Products`');
+		if($result = $this->query('SELECT `SerialNumber`, `Name` FROM `Products`')){
+		$i=0;
+		while($row = mysqli_fetch_assoc($result)){
+			$product_list[$i] = $row;
+			$i++;
+		}
+			return $product_list;
+		} else{
+			return false;
+		}
 	}
-	// INTE KLAR
+
+	
+	
+    
+
 	
 /* 	########################### 
 		Get Products
@@ -92,7 +105,7 @@ class Database extends mysqli {
 			}
 	}	
     
-	// Inte klar!
+
 	
 #################################################################################################################################################
 											/* DATABASE PRODUCT FUNCTIONS ENDS */
@@ -243,27 +256,17 @@ class Database extends mysqli {
 											/* DATABASE CATEGORY FUNCTIONS ENDS  */
 #################################################################################################################################################
 	
-	
-	
-	#################################################################################################################################################
-											/* DATABASE LOGIN/LOGOUT FUNCTIONS START  */
-#################################################################################################################################################
-	
-	
-	
-/* 	########################### 
-		Login function
-	########################### */
-	
-	
-	
-	
-	
-	#################################################################################################################################################
-											/* DATABASE LOGIN/LOGOUT FUNCTIONS ENDS  */
-#################################################################################################################################################
-	
-	
+/* #####################
+	Match password
+	#################### */
+/*	public function matchFunction {
+		$sql = " SELECT * FROM `User` WHERE `Email` = '".$email."'";
+		$result = $db->query($ql);
+		$row = $result->fetch_assoc();
+		if($password == $row['password']){
+		
+		}
+	}*/
 	
 	
 	
