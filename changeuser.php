@@ -27,7 +27,7 @@
         <table>
             <tr>
                 <td>Email</td>
-                <td><input type="text" name="Email"</td>
+                <td><input type="email" name="Email"</td>
             </tr>
 			<tr>
                 <td>Adress</td>
@@ -35,11 +35,11 @@
             </tr>
             <tr>
                 <td>Telefonnummer</td>
-                <td><input type="text" name="Phonenumber"</td>
+                <td><input type="number" name="Phonenumber"</td>
             </tr>
             <tr>
                 <td>Lösenord</td>
-                <td><input type="text" name="Password"</td>
+                <td><input type="password" name="Password"</td>
             </tr>
 			
 			<tr>

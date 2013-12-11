@@ -1,10 +1,10 @@
-<?php 
+<?php session_start(); 
 	include "header.php";
  ?>
 
 
-<?php
-	include "listcategories.php";
+<?php var_dump($_SESSION);
+	include "login.php";
 ?>
 
 <?php

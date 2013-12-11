@@ -40,7 +40,7 @@ class Database extends mysqli {
 	########################### */
 // Here we have a function that deletes data from the database, in this case it deletes a product
 	
-	public function db_DeleteProduct(){
+	public function db_DeleteProduct($serialNumber){
 		if($this->query('DELETE FROM `webshop`.`Products` WHERE `Products`.`SerialNumber` = "'.$serialNumber.'"')){
 		return true;
 		} else{
@@ -259,14 +259,18 @@ class Database extends mysqli {
 /* #####################
 	Match password
 	#################### */
-/*	public function matchFunction {
-		$sql = " SELECT * FROM `User` WHERE `Email` = '".$email."'";
-		$result = $db->query($ql);
+	public function matchFunction($email, $password) {
+		$sql = " SELECT `Password` FROM `User` WHERE `Email` = '".$email."'";
+		$result = $this->query($sql);
 		$row = $result->fetch_assoc();
-		if($password == $row['password']){
-		
+		$hashedPassword = $this->hashPassword($password);
+		var_dump($row);
+		var_dump($hashedPassword);
+		if($hashedPassword == $row['Password']){
+			return true;
 		}
-	}*/
+		return false;
+	}
 	
 	
 	

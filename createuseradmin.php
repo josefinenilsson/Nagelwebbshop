@@ -1,24 +1,3 @@
-<meta http-equiv="content-type"
-      content="text/html;charset=utf-8" />
- <head>
-        <link rel="stylesheet" type="text/css" href="base.css">
-    </head
-    <body>
-<div id="wrapper">
-<header id="header">
-    <h1 class="h1title">Webshop</h1>
-</header>
-
-<nav id="mainmenu">
-    <ul>
-        <li><a href="#">Startsida</a></li>
-        <li><a href="#">Produkter</a></li>
-        <li><a href="#">Frågor och Svar</a></li>
-        <li><a href="#">Om oss</a></li>
-    </ul>
-</nav>
-
-    <button type="button">Kundkorg</button>
 
 <article>
     <img src="img/depend.jpg">
@@ -54,14 +33,19 @@
                 <td>Lösenord</td>
                 <td><input type="password" name="Password"</td>
             </tr>
+			 <br>
+					
+    			<label for="gender">Vanlig användare</label>
+				<input type="radio"  name="user" value="false"><br>
+				<label for="gender">Administratör</label>
+				<input type="radio"  name="user" value="true"><br>
 			<tr>
                 <td>Skapa användare</td>
                 <td><input type="submit" name="submit"</td>
             </tr>
         </table>
 </article>
-    <footer> <p id="footertext">Kontakta oss på webshop@skolarbete.se</p></footer>
-</body>        
+         
 
 <?php
 
@@ -69,15 +53,20 @@
 include "DB.php"; // Includes the database
 
 /* 	########################### 
-	Add user function
+	Add user (admin) function
 	########################### */	
 
 /* This function takes the data form the form and saves it in the database, and creates a user */
 
 
 if(isset($_POST["submit"])) { 
+	if(!isset($_POST['user']) || $_POST['user'] == "false"){
+		$isAdmin = false;
+	} else {
+		$isAdmin = true;
+	}
 	
-	if($db->db_AddUser($_POST["Firstname"],$_POST["Lastname"],$_POST["Email"],$_POST["Adress"],$_POST["SSN"],$_POST["Phonenumber"],$_POST["Password"],"false")){
+	if($db->db_AddUser($_POST["Firstname"],$_POST["Lastname"],$_POST["Email"],$_POST["Adress"],$_POST["SSN"],$_POST["Phonenumber"],$_POST["Password"],$isAdmin)){
 			echo "Success!";
 		} else {
 			echo "Failure!";
