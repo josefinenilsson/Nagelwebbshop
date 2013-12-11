@@ -90,18 +90,26 @@ img {
 	float:left;
 	width: 200px;
 	display:inline-block;
+	padding-top:50px;
 }
 
-.categoryimg{
+.category img{
 	border: 1px solid #000;
+	width: 165px;
+	height:auto;
 
+}
+
+.category:nth-child(4n+0){
+clear:both
 }
 
 
 
 footer{
 	height: 40px;
-	border: 1px solid #d7d7d7
+	border: 1px solid #d7d7d7;
+	float:left;
 }
 
 #footertext {

@@ -111,12 +111,17 @@ class Database extends mysqli {
 	########################### */
 //
 	
-	public function db_AddUser($firstname,$lastname,$email,$adress,$SSn,$phonenumber,$hashedPassword,$isAdmin){
-		 if($this->query('INSERT INTO `User`(`Firstname`, `Lastname`, `Email`, `Adress`, `SSN`, `Phonenumber`, `Password`, `isAdmin`) VALUES ("'.$firstname.'","'.$lastname.'","'.$email.'","'.$adress.'","'.$SSn.'","'.$phonenumber.'","'.$hashedPassword.'",'.$isAdmin.')')){
-		 return true;
-		 } else{
-		 return false;
-		 }
+	public function db_AddUser($firstname,$lastname,$email,$adress,$SSn,$phonenumber,$password,$isAdmin){
+		$hashedPassword = hashPassword($password);
+		if($this->query('INSERT INTO `User`(`Firstname`, `Lastname`, `Email`, `Adress`, `SSN`, `Phonenumber`, `Password`, `isAdmin`) VALUES ("'.$firstname.'","'.$lastname.'","'.$email.'","'.$adress.'","'.$SSn.'","'.$phonenumber.'","'.$hashedPassword.'",'.$isAdmin.')')){
+			return true;
+		} else{
+			return false;
+		}
+	
+	
+	
+
 	}
 		
 /* 	########################### 
@@ -137,7 +142,11 @@ class Database extends mysqli {
 		Hash password
 	########################### */
 	
-	$hashedPassword = hash("md5",$password."ctf78j34mx8jtr23kezjt3r32");
+	public function hashPassword($password) {
+		return $hashedPassword = hash("md5",$password."ctf78j34mx8jtr23kezjt3r32");	
+	}
+	
+
 
 	
 	
@@ -234,6 +243,25 @@ class Database extends mysqli {
 											/* DATABASE CATEGORY FUNCTIONS ENDS  */
 #################################################################################################################################################
 	
+	
+	
+	#################################################################################################################################################
+											/* DATABASE LOGIN/LOGOUT FUNCTIONS START  */
+#################################################################################################################################################
+	
+	
+	
+/* 	########################### 
+		Login function
+	########################### */
+	
+	
+	
+	
+	
+	#################################################################################################################################################
+											/* DATABASE LOGIN/LOGOUT FUNCTIONS ENDS  */
+#################################################################################################################################################
 	
 	
 	

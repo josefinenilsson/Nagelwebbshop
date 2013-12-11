@@ -1,3 +1,12 @@
-<?php if ($_GET['page'] == "categories"){
-	include "getproducts.php";
-} ?>
+<?php 
+	include "header.php";
+ ?>
+
+
+<?php
+	include "listcategories.php";
+?>
+
+<?php
+	include "footer.php";
+?>

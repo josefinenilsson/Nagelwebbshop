@@ -1,0 +1,1 @@
+ <footer> <p id="footertext">Kontakta oss på webshop@skolarbete.se</p></footer>
