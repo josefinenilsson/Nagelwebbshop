@@ -137,7 +137,7 @@ class Database extends mysqli {
 		Hash password
 	########################### */
 	
-	//$hashedPassword = hash($password."ctf78j34mx8jtr23kezjt3r32");
+	$hashedPassword = hash("md5",$password."ctf78j34mx8jtr23kezjt3r32");
 
 	
 	
