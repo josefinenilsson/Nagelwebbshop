@@ -1,17 +1,19 @@
-
+<?php
+	include "header.php";
+?>
 <?php
 
 require "DB.php"; // Includes the database
 
 
-$categories[] = $db->db_ListCategories();
+$categories[] = $db->db_ListCategories(); // Hämtar sparar array från db_ListCategories() i  variablen $categories[]
 
 
 
-if($categories == false){
+if($categories == false){ // Om den inte hittar något = false
      return "Error";
 }  else {
-    for ($i = 0; $i < count($categories[0]); $i++){
+    for ($i = 0; $i < count($categories[0]); $i++){ // Kör en forloop som skriver ut informationen.
         echo '<div class="category">';
         echo '<a href="/?page=categories&category='.$categories[0][$i]["Category_ID"].'"><img src="'.$categories[0][$i]["Category_image"].'"></a>';
 		echo '<h3>'.$categories[0][$i]["Name"].'</h3>';
@@ -22,4 +24,8 @@ if($categories == false){
 }
 
 
+?>
+
+<?php
+	include "footer.php";
 ?>

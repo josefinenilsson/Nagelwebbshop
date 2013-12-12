@@ -99,6 +99,7 @@ class Database extends mysqli {
 				$category_get[$i] = $row;
 				$i++;
 			}
+			
 			return $category_get;
 		} else{
 			return false;
@@ -122,7 +123,7 @@ class Database extends mysqli {
 /* 	########################### 
 		Add User
 	########################### */
-//
+// Här har vi en funktion som lägger till data i databasen
 	
 	public function db_AddUser($firstname,$lastname,$email,$adress,$SSn,$phonenumber,$password,$isAdmin){
 		$hashedPassword = $this->hashPassword($password);
@@ -140,6 +141,7 @@ class Database extends mysqli {
 /* 	########################### 
 		Delete User
 	########################### */	
+// Här har vi en funktion som tar bort en användare ur databasen där SSN stämmer in med det man valt
 	public function db_DeleteUser(){
 		$this->query('DELETE FROM `webshop`.`User` WHERE `User`.`SSN` = '.$SSn.'');
 	}
@@ -147,6 +149,7 @@ class Database extends mysqli {
 /* 	########################### 
 		Change User
 	########################### */
+// Den här funktionen uppdaterar data i databasen, vi använder den här för att ändra en användare.
 	public function db_ChangeUser(){
 		$this->query('UPDATE `User` SET `Email`= '.$email.',`Adress`= '.$adress.',`Phonenumber`= '.$phonenumber.',`Password`= '.$password.' WHERE `SSN` = ');
 	}
@@ -154,6 +157,7 @@ class Database extends mysqli {
 	/* 	########################### 
 		Hash password
 	########################### */
+// Här har vi en funktion som hashar och saltar vårt lösenord ( detta är det som sparas i databasen)
 	
 	public function hashPassword($password) {
 		return $hashedPassword = hash("md5",$password."ctf78j34mx8jtr23kezjt3r32");	
@@ -175,12 +179,13 @@ class Database extends mysqli {
 											/* DATABASE ORDER FUNCTIONS START  */
 #################################################################################################################################################
 	
-	
+	// DESSA FUNKTIONER ÄR INTE FÄRDIGA!!!!
 	
 	
 /* 	########################### 
 		Add Order
 	########################### */
+// Här har vi en funktion som lägger till i databasen, Vi använder den här för att lägga till en produkt
 	
 	public function db_AddOrder(){
 		$this->query('INSERT INTO `Order`(`Date`, `Time`, `Customer`, `IP_Adress`, `ID`, `HasCheckedOut`) VALUES 		 	 ('.$date.','.$time.','.$SSn.','.$IPadress.','.$serialNumber.','.$hasCheckedOut.')');
@@ -190,15 +195,17 @@ class Database extends mysqli {
 /* 	########################### 
 		Delete Order
 	########################### */	
+// Här har vi en funktion som tar bort ur databasen, här använder vi den för att ta bort ordrar
 	
 	public function db_DeleteOrder(){
 		$this->query('DELETE FROM `webshop`.`Order` WHERE `User`.`SSN` = '.$SSn.'');
 	}
-// Denna är inte klar än
+// Denna hör till shoppingcart delen (INTE KLAR)
 	
 /* 	########################### 
 		Change Order
 	########################### */
+// Den här funktionen används för att ändra en order.
 	
 	public function db_ChangeOrder(){
 		$this->query('');
@@ -209,6 +216,7 @@ class Database extends mysqli {
 /* 	########################### 
 		List Orders
 	########################### */
+// Denna funktion skapar en lista med alla ordrar som finns ( admin funktion )
 	
 	public function db_ListOrders(){
 		$this->query('SELECT * FROM ');
@@ -231,6 +239,8 @@ class Database extends mysqli {
 /* 	########################### 
 		List Categories
 	########################### */
+	
+	// Den här funktioner listar alla kategorier
 	
 	
 	public function db_ListCategories(){
@@ -259,9 +269,10 @@ class Database extends mysqli {
 /* #####################
 	Match password
 	#################### */
+// Denna funktionen kollar om lösenordet och email stämmer överrens med det användaren fyller i när de loggar in.
 	public function matchFunction($email, $password) {
-		$sql = " SELECT `Password` FROM `User` WHERE `Email` = '".$email."'";
-		$result = $this->query($sql);
+		$sql = " SELECT `Password` FROM `User` WHERE `Email` = '".$email."'"; // Hämtar lösenordet från en specifik användare
+		$result = $this->query($sql); 
 		$row = $result->fetch_assoc();
 		$hashedPassword = $this->hashPassword($password);
 		var_dump($row);

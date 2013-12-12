@@ -1,4 +1,6 @@
-
+<?php
+	include "header.php";
+?>
 <article>
     <img src="img/depend.jpg">
 
@@ -56,16 +58,18 @@ include "DB.php"; // Includes the database
 	Add user (admin) function
 	########################### */	
 
-/* This function takes the data form the form and saves it in the database, and creates a user */
+/* This function takes the data from the form and saves it in the database, and creates a user */
+// Den kolla också om man admin har valt att skapa admin användare, eller vanlig användare
 
 
 if(isset($_POST["submit"])) { 
-	if(!isset($_POST['user']) || $_POST['user'] == "false"){
+	if(!isset($_POST['user']) || $_POST['user'] == "false"){ 
+	// Om man inte valt något alternativ, eller man inte har valt admin, sätt $isAdmin = false
 		$isAdmin = false;
 	} else {
 		$isAdmin = true;
 	}
-	
+	// Denna funktionen tar data från formuläret och lägger till användare i databasen.
 	if($db->db_AddUser($_POST["Firstname"],$_POST["Lastname"],$_POST["Email"],$_POST["Adress"],$_POST["SSN"],$_POST["Phonenumber"],$_POST["Password"],$isAdmin)){
 			echo "Success!";
 		} else {
@@ -82,4 +86,7 @@ if(isset($_POST["submit"])) {
 
 
 
+?>
+<?php
+	include "footer.php";
 ?>

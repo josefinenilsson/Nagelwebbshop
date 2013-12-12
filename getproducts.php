@@ -1,4 +1,7 @@
 <?php
+	include "header.php";
+?>
+<?php
 
 include "DB.php"; // Includes the database
 
@@ -17,4 +20,7 @@ if($products == false){
         echo '</div>';
     }
 }
+?>
+<?php
+	include "footer.php";
 ?>
