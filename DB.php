@@ -142,9 +142,13 @@ class Database extends mysqli {
 		Delete User
 	########################### */	
 // Här har vi en funktion som tar bort en användare ur databasen där SSN stämmer in med det man valt
-	public function db_DeleteUser(){
-		$this->query('DELETE FROM `webshop`.`User` WHERE `User`.`SSN` = '.$SSn.'');
+	public function db_DeleteUser($SSn){
+		if($this->query('DELETE FROM `webshop`.`User` WHERE `User`.`SSN` = '.$SSn.'')){
+		return true;
+		} else false;
 	}
+	
+	
 	
 /* 	########################### 
 		Change User
@@ -163,6 +167,23 @@ class Database extends mysqli {
 		return $hashedPassword = hash("md5",$password."ctf78j34mx8jtr23kezjt3r32");	
 	}
 	
+	/* 	########################### 
+		List user
+	########################### */
+	
+	public function db_ListUser(){
+		if($result = $this->query('SELECT `SSN` FROM `User`')){
+		$i=0;
+		while($row = mysqli_fetch_assoc($result)){
+			$user_list[$i] = $row;
+			$i++;
+		}
+			return $user_list;
+		} else{
+			return false;
+		}
+	}
+
 
 
 	
