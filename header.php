@@ -15,8 +15,8 @@
     <ul>
         <li><a href="index.php">Startsida</a></li>
         <li><a href="listcategories.php">Produkter</a></li>
-        <li><a href="#">Frågor och Svar</a></li>
-        <li><a href="#">Om oss</a></li>
+        <li><a href="questions.php">Frågor och Svar</a></li>
+        <li><a href="about.php">Om oss</a></li>
     </ul>
 </nav>
 
