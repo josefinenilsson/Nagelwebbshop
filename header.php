@@ -8,11 +8,12 @@ session_start();
 	 <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
 	 <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/sticky-footer.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
     </head>
     <body>
 		
 		
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<!--<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -37,20 +38,28 @@ session_start();
             <button type="submit" class="btn btn-success">Sign in</button>
           </form>
         </div><!--/.navbar-collapse -->
-      </div>
-    </div>
-<!-- <div id="wrapper">
-<header id="header">
-    <h1 class="h1title">Webshop</h1>
-</header>
-
-<nav id="mainmenu">
+     <!-- </div>
+    </div> -->
+ <div id="wrapper">
+<header >
+	<nav id="mainmenu">
     <ul>
         <li><a href="index.php">Startsida</a></li>
         <li><a href="listcategories.php">Produkter</a></li>
-        <li><a href="questions.php">Frågor och Svar</a></li>
         <li><a href="about.php">Om oss</a></li>
     </ul>
+		 <form class="login" role="form">
+            <div class="form_group">
+				<input type="text" placeholder="Email" class="form_control">
+              	<input type="password" placeholder="Password" class="form_control">
+				<input type="button" id="member_login"class="login_button" value="Logga in"></button>
+            </div>
+            
+          </form>
 </nav>
 
-    <button type="button">Kundkorg</button> -->
+	
+</header>
+
+
+    <input type="button" class="shoppingcart" value="Kundkorg"></button>
