@@ -80,7 +80,8 @@ header{
 	padding:0 10px;
 	color: #fff;
 	text-decoration: none;
-	font-size:15px;
+	font-size:20px;
+	margin-top:3px;
 	
 }
 .login_button{
@@ -94,6 +95,24 @@ form {
 article {
 	margin-top: 10px;
 	margin-left: 10px;
+}
+
+.addmember{
+	text-align:center;
+}
+
+.become_member{
+	border:none;
+	border-radius:6px;
+	font-size:25px;
+	background:#000;
+	color:#FFF;
+	transition: 500ms;
+	-webkit-transition: 500ms;
+}
+
+.become_member:hover{
+	background:#00D806;
 }
 
 

@@ -1,6 +1,37 @@
 <?php
 session_start();
 ?>
+<?php
+/* #####################
+	Login function
+	#################### */
+
+// Här har vi funktionen för att logga in
+
+
+include "DB.php"; // inkluderar filen DB.php
+
+if(!empty($_POST["loginbutton"])){ // Om formuläret är ifyllt, kör "post" på formuläret och spara Email och Password i enskilda variabler
+
+	$email = $_POST["Email"];
+	$password = $_POST["Password"];
+	
+	var_dump($_POST);
+	
+	if(!empty($email) && !empty($password)){ 
+		// Om $email & $password inte är tomma kör funktionen matchFunkction() mot databasen och kolla om inloggningsuppgifterna stämmer
+
+		if($db->matchFunction($email, $password)){
+		  	$_SESSION["Email"] = $email; // Spara $email (användarens email) i $_SESSION
+			echo "Du är inloggad!";
+		} else {
+			echo "Inloggning misslyckades";
+		}
+	}
+}
+
+?>
+
 <meta http-equiv="content-type"
       content="text/html; charset=utf-8" />
  <head>
@@ -12,34 +43,6 @@ session_start();
     </head>
     <body>
 		
-		
-<!--<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.php">Startsida</a>
-			<a class="navbar-brand" href="listcategories.php">Produkter</a>
-			<a class="navbar-brand" href="questions.php">Frågor och Svar</a>
-			<a class="navbar-brand" href="about.php">Om oss</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right" role="form">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </form>
-        </div><!--/.navbar-collapse -->
-     <!-- </div>
-    </div> -->
  <div id="wrapper">
 <header >
 	<nav id="mainmenu">
@@ -48,11 +51,11 @@ session_start();
         <li><a href="listcategories.php">Produkter</a></li>
         <li><a href="about.php">Om oss</a></li>
     </ul>
-		 <form class="login" role="form">
+		 <form method="post" class="login" role="form">
             <div class="form_group">
-				<input type="text" placeholder="Email" class="form_control">
-              	<input type="password" placeholder="Password" class="form_control">
-				<input type="button" id="member_login"class="login_button" value="Logga in"></button>
+				<input type="email" placeholder="Email" name="Email" class="form_control">
+              	<input type="password" name="Password" placeholder="Password" class="form_control">
+				<input type="submit" name="loginbutton" class="login_button" value="Logga in">
             </div>
             
           </form>
@@ -63,3 +66,6 @@ session_start();
 
 
     <input type="button" class="shoppingcart" value="Kundkorg"></button>
+
+
+
