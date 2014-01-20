@@ -1,46 +1,52 @@
 <?php
- include 'header.php';
+ include "header.php";
 ?>
+<div id="wrapper">
 <article>
-    <img src="img/depend.jpg">
+    
 
 
+	
+		<h3>Bli medlem</h3>
+		<p>Lollipop macaroon lollipop caramels. Cookie lemon drops pie oat cake candy canes fruitcake. Jelly chocolate cake brownie carrot cake soufflé gummies pastry dragée carrot cake.</p>
+		<p>Lollipop macaroon lollipop caramels. Cookie lemon drops pie oat cake candy canes fruitcake. Jelly chocolate cake brownie carrot cake soufflé gummies pastry dragée carrot cake.</p>
 <form action="adduser.php" method="post" enctype="multipart/form-data">
         <table>
             <tr>
-                <td>Förnamn</td>
-                <td><input type="text" name="Firstname"</td>
+                
+                <td><input class="addUser" placeholder="Förnamn" type="text" name="Firstname"</td>
             </tr>
             <tr>
-                <td>Efternamn</td>
-                <td><input type="text" name="Lastname"</td>
+              
+                <td><input class="addUser" placeholder="Efternamn" type="text" name="Lastname"</td>
             </tr>
             <tr>
-                <td>Email</td>
-                <td><input type="email" name="Email"</td>
+               
+                <td><input class="addUser" placeholder="Email" type="email" name="Email"</td>
             </tr>
             <tr>
-                <td>Adress</td>
-                <td><input type="text" name="Adress"</td>
+                
+                <td><input class="addUser" placeholder="Adress" type="text" name="Adress"</td>
             </tr>
 			<tr>
-                <td>Personnummer</td>
-                <td><input type="number" name="SSN"</td>
+                
+                <td><input class="addUser" placeholder="Personnummer" type="number" name="SSN"</td>
             </tr>
 			<tr>
-                <td>Telefonnummer</td>
-                <td><input type="number" name="Phonenumber"</td>
+                
+                <td><input class="addUser" placeholder="Telefonnummer" type="number" name="Phonenumber"</td>
             </tr>
 			<tr>
-                <td>Lösenord</td>
-                <td><input type="password" name="Password"</td>
+              
+                <td><input class="addUser" placeholder="Lösenord" type="password" name="Password"</td>
             </tr>
 			<tr>
-                <td>Skapa användare</td>
-                <td><input type="submit" name="submit"</td>
+              
+                <td><input value="Skapa användare" class="addUserButton" type="submit" name="submit"</td>
             </tr>
         </table>
 </article>
+					</div>
     <footer> <p id="footertext">Kontakta oss på webshop@skolarbete.se</p></footer>
 </body>        
 

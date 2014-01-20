@@ -1,15 +1,14 @@
 body {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 13px;
-	background: url('');
+	background: #d7d7d7;
 
 }
 
 #wrapper {
 	max-width:1200px;
 	margin:auto;
-	border-left: 1px solid #d7d7d7;
-	border-right: 1px solid #d7d7d7;
+	
 	/*background: url('../img/np.jpg' );*/
 
 }
@@ -117,7 +116,7 @@ article {
 
 
 img {
-	border-radius: 1px;
+	
 }
 
 /* Kategorisidan */
@@ -133,7 +132,7 @@ img {
 }
 
 .category img{
-	border: 1px solid #000;
+	box-shadow: 1px 1px 5px #888888;
 	width: 200px;
 	height:auto;
 	margin-left: 22px;
@@ -156,12 +155,39 @@ clear:both
 	
 }
 
+/* Lägga till användare styling */
+.addUser{
+	border: 1px solid #222;
+	border-radius: 5px;
+	padding:5px;
+	margin-bottom:2.5px;
+	margin-top: 2.5px;
+	
+
+}
+.addUserButton{
+	border:none;
+	border-radius:5px;
+	padding:5px;
+	margin-bottom:2.5px;
+	margin-top:2.5px;
+}
+
+#wrapper article{
+	width:70%;
+	margin:auto;
+	
+}
+
 
 
 
 
 footer{
+	margin-top:50px;
+	margin-bottom: 20px;
 	height: 40px;
+	width:100%;
 	border: 1px solid #d7d7d7;
 	float:left;
 }
