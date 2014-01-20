@@ -105,14 +105,14 @@ article {
 	border:none;
 	border-radius:6px;
 	font-size:25px;
-	background:#000;
+	background:#23B110;
 	color:#FFF;
 	transition: 500ms;
 	-webkit-transition: 500ms;
 }
 
 .become_member:hover{
-	background:#00D806;
+	background:#000;
 }
 
 
