@@ -43,6 +43,7 @@ header{
 	-webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0);
 	box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0);
 	padding:5px;
+	font-size:15px;
 }
 
 .form_group button{
@@ -56,7 +57,7 @@ header{
 	float:right;
 	margin-top:-20px;
 	margin-right:30px;
-	font-size:13px;
+	font-size:15px;
 }
 
 #mainmenu ul {
@@ -224,17 +225,31 @@ img {
 	margin-bottom:2.5px;
 	margin-top: 2.5px;
 	font-size:15px;
-	-webkit-outer-spin-button{
-		display:none;
-		-webkit-appearance: none;
-    	margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
-	}
-	-webkit-inner-spin-button {
+	-webkit-outer-spin-button:display:none;
+	-webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+	-webkit-inner-spin-button
     	display: none; 
     	-webkit-appearance: none;
 		
 		margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
+	
+/* Lägg till produkt styling */
+	
+	.addProduct{
+		border:1px solid #222;
+		border-radius:5px;
+		padding:5px;
+		margin-bottom:2.5px;
+		margin-top:2.5px;
+		font-size:15px;
+	
+	}
+	
+	.addProductButton{
+	
+	}
 	
 
 }

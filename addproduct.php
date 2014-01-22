@@ -6,33 +6,33 @@
     <form action="addproduct.php" method="post" enctype="multipart/form-data">
             <table>
             <tr>
-                <td>Serienummer</td>
-                <td><input type="text" name="SerialNumber"</td>
+               
+                <td><input class="addProduct" placeholder="Serienummer" type="text" name="SerialNumber"</td>
             </tr>
             <tr>
-                <td>Namn</td>
-                <td><input type="text" name="Name"</td>
+                
+                <td><input class="addProduct" placeholder="Namn" type="text" name="Name"</td>
             </tr>
             <tr>
-                <td>Beskrivning</td>
-                <td><input type="text" name="Description"</td>
+                
+                <td><input class="addProduct" type="text" placeholder="Beskrivning" name="Description"</td>
             </tr>
             <tr>
-                <td>Pris</td>
-                <td><input type="text" name="Price"</td>
+               
+                <td><input class="addProduct" placeholder="Pris" type="text" name="Price"</td>
             </tr>
 			<tr>
-                <td>Kategori</td>
-                <td><input type="text" name="Category_ID"</td>
+                
+                <td><input class="addProduct" placeholder="Kategori" type="text" name="Category_ID"</td>
             </tr>
 			<tr>
-	 			<td><label for="file">Filename:</label></td>
-       			<td><input type="text" name="Product_image" id="file"></td><br>
+	 			
+       			<td><input class="addProduct" type="file" name="Product_image" id="file"></td><br>
         		
 			</tr>
 			<tr>
-                <td>Spara</td>
-                <td><input type="submit" name="submit"</td>
+                
+                <td><input class="addProductButton" value="Lägg till" type="submit" name="submit"</td>
             </tr>
         </table>
     </article>
