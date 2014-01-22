@@ -1,7 +1,5 @@
 <?php
 	include "header.php";
-?>
-<?php
 
 require "DB.php"; // Includes the database
 

@@ -1,7 +1,6 @@
 <?php
 	include "header.php";
-?>
-<?php
+
 
 include "DB.php"; // Includes the database
 
