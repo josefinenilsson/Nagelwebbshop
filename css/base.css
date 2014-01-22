@@ -14,6 +14,22 @@ body {
 
 }
 
+#wrapper article{
+	width:70%;
+	margin:auto;
+	
+}
+
+
+h3 {
+    float: left;
+    margin-right: 50px;
+}
+
+#ordernow{
+    width:266px;
+}
+
 header{
 	height:60px;
 	margin-bottom: 4px;
@@ -234,21 +250,32 @@ img {
 		
 		margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
+.addUserButton{
+	border:none;
+	border-radius:5px;
+	padding:5px;
+	margin-bottom:2.5px;
+	margin-top:2.5px;
+}
 	
 /* Lägg till produkt styling */
 	
-	.addProduct{
-		border:1px solid #222;
-		border-radius:5px;
-		padding:5px;
-		margin-bottom:2.5px;
-		margin-top:2.5px;
-		font-size:15px;
+.addProduct{
+	border:1px solid #222;
+	border-radius:5px;
+	padding:5px;
+	margin-bottom:2.5px;
+	margin-top:2.5px;
+	font-size:15px;
 	
 	}
 	
-	.addProductButton{
-	
+.addProductButton{
+	border:none;
+	border-radius:5px;
+	padding:5px;
+	margin-bottom:2.5px;
+	margin-top:2.5px;
 	}
 	
 
@@ -261,21 +288,29 @@ img {
 	margin-top:2.5px;
 }
 
-#wrapper article{
-	width:70%;
-	margin:auto;
+/* Adminproduct sidan */
+
+.admin_table{
+
+}
+
+.admin_th{
+	width:150px;
+
+
+}
+
+.admin_td{
+	width:150px;
 	
+
 }
 
 
-h3 {
-    float: left;
-    margin-right: 50px;
-}
 
-#ordernow{
-    width:266px;
-}
+
+
+/* Footer */
 
 footer{
 	margin-top:70px;
