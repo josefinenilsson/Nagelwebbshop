@@ -12,7 +12,7 @@ session_start();
 	<link rel="stylesheet" type="text/css" href="css/sticky-footer.css">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
     </head>
-    <body class="Site">
+    <body>
 		
 		<header >
 	<nav id="mainmenu">
