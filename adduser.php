@@ -8,8 +8,8 @@
 
 	
 		<h3>Bli medlem</h3>
-		<p>Lollipop macaroon lollipop caramels. Cookie lemon drops pie oat cake candy canes fruitcake. Jelly chocolate cake brownie carrot cake soufflé gummies pastry dragée carrot cake.</p>
-		<p>Lollipop macaroon lollipop caramels. Cookie lemon drops pie oat cake candy canes fruitcake. Jelly chocolate cake brownie carrot cake soufflé gummies pastry dragée carrot cake.</p>
+		<p>För att kunna shoppa hos NailSnail behöver du bli medlem.</p>
+		<p>Medlemskapet förenklar din shoppingupplevelse genom att komma ihåg din adress och information för att lätt kunna sända din beställning och faktura till dig så snabbt som möjligt.</p>
 <form action="adduser.php" method="post" enctype="multipart/form-data">
         <table>
             <tr>
