@@ -219,7 +219,14 @@ img {
 }
 
 
+h3 {
+    float: left;
+    margin-right: 50px;
+}
 
+#ordernow{
+    width:266px;
+}
 
 
 footer{

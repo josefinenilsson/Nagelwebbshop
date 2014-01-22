@@ -1,9 +1,10 @@
 <?php
 include "header.php";
 ?>
-<article class="Site-content">
-	<h2>Här kör vi lite fin utfyllnadstext</h2>
-</article>
+<article>
+<h2>Om oss</h2>
+        <p>Vi är två tjejer som går det andra året på programmet Grafisk design och Webbutveckling på Tekniska Högskolan i Jönköping. Denna webbshop började vi göra under hösterminen 2013 då vi gick kursen Webb och databaser som är 6 högskolepoäng. </p>
+    </article>
 <?php 
 include "footer.php";
 ?>
