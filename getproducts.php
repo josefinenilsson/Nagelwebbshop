@@ -17,6 +17,7 @@ if($products == false){
         echo '<div >';
         echo '<a href="/?page=categories&category='.$products[0][$i]["SerialNumber"].'"><img src="'.$products[0][$i]["Product_image"].'"></a>';
 		echo '<h3>'.$products[0][$i]["Name"].'</h3>';
+		echo '<p>'.$products[0][$i]["Description"].'</p>';
         echo '</div>';
     }
 }
