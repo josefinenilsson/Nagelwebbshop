@@ -12,10 +12,9 @@ session_start();
 	<link rel="stylesheet" type="text/css" href="css/sticky-footer.css">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
     </head>
-    <body>
+    <body class="Site">
 		
- <div id="wrapper">
-<header >
+		<header >
 	<nav id="mainmenu">
     <ul>
         <li><a href="index.php">Startsida</a></li>
@@ -34,9 +33,13 @@ session_start();
 
 	
 </header>
+		
+ <div id="wrapper">
 
 
-    <input type="button" class="shoppingcart" value="Kundkorg"></button>
+
+    <!--<input type="button" class="shoppingcart" value="Kundkorg">-->
+	 
 
 
 
