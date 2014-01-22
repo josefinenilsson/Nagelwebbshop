@@ -2,9 +2,10 @@
 session_start();
 ?>
 
-
 <meta http-equiv="content-type"
-      content="text/html; charset=utf-8" />
+      content="text/html;charset=utf-8" 
+      />
+
  <head>
         <link rel="stylesheet" type="text/css" href="css/base.css">
 	 <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
