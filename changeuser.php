@@ -1,3 +1,6 @@
+<?php
+	include "header.php";
+?>
 <meta http-equiv="content-type"
       content="text/html;charset=utf-8" />
 <head>
@@ -5,10 +8,6 @@
 </head
 <body>
 <div id="wrapper">
-    <header id="header">
-        <h1 class="h1title">Webshop</h1>
-    </header>
-
     <nav id="mainmenu">
         <ul>
             <li><a href="#">Startsida</a></li>
@@ -17,11 +16,7 @@
             <li><a href="#">Om oss</a></li>
         </ul>
     </nav>
-
-    <button type="button">Kundkorg</button>
-
     <article>
-        <img src="img/depend.jpg">
 
 <form action="changeuser.php" method="post" enctype="multipart/form-data">
         <table>
@@ -48,7 +43,6 @@
             </tr>
         </table>
     </article>
-    <footer> <p id="footertext">Kontakta oss på webshop@skolarbete.se</p></footer>
 </body>
 
 
