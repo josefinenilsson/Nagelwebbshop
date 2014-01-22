@@ -223,6 +223,18 @@ img {
 	padding:5px;
 	margin-bottom:2.5px;
 	margin-top: 2.5px;
+	font-size:15px;
+	-webkit-outer-spin-button{
+		display:none;
+		-webkit-appearance: none;
+    	margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+	}
+	-webkit-inner-spin-button {
+    	display: none; 
+    	-webkit-appearance: none;
+		
+		margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
 	
 
 }
