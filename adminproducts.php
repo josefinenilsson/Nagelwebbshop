@@ -31,7 +31,7 @@ if($products == false){ // Om den inte kan hämta produktlistan genom db_ListPro
 		echo '<tr>';
 		echo '<td class="admin_td">'.$products[0][$i]["SerialNumber"].'</td>';
 		echo '<td class="admin_td">'.$products[0][$i]["Name"].'</td>';
-		echo '<td class="admin_td"><form action="/adminproducts.php" method="post"><input type="submit" value="Ta bort" name="delete"></form></td>';
+		echo '<td class="admin_td"><form action="/adminproducts.php" method="post"><input type="submit" value="'.$serialNumber.'" name="delete"></form></td>';
 		echo '</tr>';
 		echo '</table>';
 					
