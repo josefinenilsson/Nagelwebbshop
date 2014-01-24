@@ -39,7 +39,7 @@
    
 </body>
     <?php
-include "DB.php"; // Includes the database
+require_once("DB.php"); // Includes the database
 
 
 

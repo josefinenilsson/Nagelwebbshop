@@ -3,7 +3,7 @@
 	include "header.php";
 ?>
 <?php
-require "DB.php"; // Includes the database
+require_once("DB.php"); // Includes the database
 
 if (isset($_POST['delete'])){ // Om man trycker på kanppen 'delete' kör funktionen db_DeleteFunction
 	if($db->db_DeleteUser($_POST['delete'])) {
