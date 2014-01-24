@@ -9,7 +9,7 @@ if (isset($_POST['delete'])){ // Om man trycker på kanppen 'delete' kör funkti
 	if($db->db_DeleteUser($_POST['delete'])) {
 		echo "Product deleted.";
 	} else {
-		echo "Product failed to delete.";
+		echo "Failed to delete user.";
 	}
 }
 $user[] = $db->db_ListUser(); // Hämta en array genom funktionen db_ListUser()

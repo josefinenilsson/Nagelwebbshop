@@ -2,7 +2,7 @@
 	include "header.php";
 
 
-include "DB.php"; // Includes the database
+require_once("DB.php"); // Includes the database
 
 
 $products[] = $db->db_GetProducts($_GET['category']);

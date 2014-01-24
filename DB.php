@@ -10,7 +10,7 @@ class Database extends mysqli {
         parent::__construct($host, $user, $pass, $db);
 
         if (mysqli_connect_error()) {
-            die('Connect Error (' . mysqli_connect_errno() . ') '
+            die('Connect Error (' . mysqli_connect_errno() . ')'
                     . mysqli_connect_error());
         }
     }
@@ -41,7 +41,7 @@ class Database extends mysqli {
 // Here we have a function that deletes data from the database, in this case it deletes a product
 	
 	public function db_DeleteProduct($serialNumber){
-		if($this->query('DELETE FROM `webshop`.`Products` WHERE `Products`.`SerialNumber` = "'.$serialNumber.'"')){
+		if($this->query('DELETE FROM `176225-webshop`.`Products` WHERE `Products`.`SerialNumber` = "'.$serialNumber.'"')){
 		return true;
 		} else{
 		return false;
@@ -143,7 +143,7 @@ class Database extends mysqli {
 	########################### */	
 // Här har vi en funktion som tar bort en användare ur databasen där SSN stämmer in med det man valt
 	public function db_DeleteUser($SSn){
-		if($this->query('DELETE FROM `webshop`.`User` WHERE `User`.`SSN` = '.$SSn.'')){
+		if($this->query('DELETE FROM `176225-webshop`.`User` WHERE `User`.`SSN` = '.$SSn.'')){
 		return true;
 		} else false;
 	}
@@ -219,7 +219,7 @@ class Database extends mysqli {
 // Här har vi en funktion som tar bort ur databasen, här använder vi den för att ta bort ordrar
 	
 	public function db_DeleteOrder(){
-		$this->query('DELETE FROM `webshop`.`Order` WHERE `User`.`SSN` = '.$SSn.'');
+		$this->query('DELETE FROM `176225-webshop`.`Order` WHERE `User`.`SSN` = '.$SSn.'');
 	}
 // Denna hör till shoppingcart delen (INTE KLAR)
 	
@@ -308,7 +308,7 @@ class Database extends mysqli {
 	
 } // Here ends the class Database
 
-$db = new Database('localhost', 'root', 'root', 'webshop'); // Connects to database here
+$db = new Database('webshop-176225.mysql.binero.se', '176225_xh46061', 'skola2014', '176225-webshop'); // Connects to database here
 //$db->db_AddProduct($serialNumber,$productName,$productDescr,$productPrice,$category_ID,$productImage); 									// Add product function runs here
 //$db->db_DeleteProduct();									// Delete product function runs here
 //$db->db_ChangeProduct();									// Change product function runs here
