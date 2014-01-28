@@ -12,7 +12,7 @@
 </p><p>P.s Du måste vara medlem för att kunna shoppa d.s</p>
         <a href="adduser.php"><input class="become_member"  type="submit"  value="Bli medlem"></a>
       </div>
-
+<h4><a href="reset.php">Session reset</a></h4>
 
 <?php
 	include "footer.php";

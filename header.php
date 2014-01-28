@@ -13,7 +13,13 @@ if(!empty($_POST["loginbutton"])){ // Om formuläret är ifyllt, kör "post" på
 
 		if($db->matchFunction($email, $password)){
 		  	$_SESSION["Email"] = $email; // Spara $email (användarens email) i $_SESSION
-			echo "Du är inloggad!";
+            var_dump($db->db_GetUserByEmail($email));
+            //$_SESSION["Name"] = $name;
+            echo '<div class="signed_in_user">';
+			echo '<h4>Välkommen'.$user[0][$i]["Name"].'</h4>';
+            echo '<a href="reset.php">Logga ut''</a>';
+            echo '<input type="submit" value="Kundkorg" class="shopping_cart">';
+            echo '</div>';
 		} else {
 			echo "Inloggning misslyckades";
 		}
@@ -45,12 +51,23 @@ if(!empty($_POST["loginbutton"])){ // Om formuläret är ifyllt, kör "post" på
         <li><a href="listcategories.php">Produkter</a></li>
         <li><a href="about.php">Om oss</a></li>
     </ul>
-		 <form method="post" class="login" role="form">
+        <?php
+        if (!empty($_SESSION["Email"])){
+            echo '<h5>Välkommen'.$categories[0][$i]["Name"].'</h3>';
+        }else{
+        
+        }
+		
+             
+             ?>
+        
+         <form method="post" class="login" role="form">
             <div class="form_group">
 				<input type="email" placeholder="Email" name="Email" class="form_control">
               	<input type="password" name="Password" placeholder="Password" class="form_control">
 				<input type="submit" name="loginbutton" class="login_button" value="Logga in">
             </div>
+        
             
           </form>
 </nav>

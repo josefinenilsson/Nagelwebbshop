@@ -183,6 +183,19 @@ class Database extends mysqli {
 			return false;
 		}
 	}
+    
+    /* 	########################### 
+		Get user
+	########################### */
+	
+public function db_GetUserByEmail($email){
+		if($result = $this->query('SELECT `Name` FROM `User` WHERE `Email` = "'.$email.'"')){
+           return mysqli_fetch_assoc($result);		
+		} else {
+			return false;
+        }
+	}
+
 
 
 
