@@ -15,13 +15,8 @@ if(!empty($_POST["loginbutton"])){ // Om formuläret är ifyllt, kör "post" på
 		  	$_SESSION["Email"] = $email; // Spara $email (användarens email) i $_SESSION
             var_dump($db->db_GetUserByEmail($email));
             //$_SESSION["Name"] = $name;
-            echo '<div class="signed_in_user">';
-			echo '<h4>Välkommen'.$user[0][$i]["Name"].'</h4>';
-            echo '<a href="reset.php">Logga ut''</a>';
-            echo '<input type="submit" value="Kundkorg" class="shopping_cart">';
-            echo '</div>';
 		} else {
-			echo "Inloggning misslyckades";
+
 		}
 	}
 }
@@ -53,7 +48,12 @@ if(!empty($_POST["loginbutton"])){ // Om formuläret är ifyllt, kör "post" på
     </ul>
         <?php
         if (!empty($_SESSION["Email"])){
-            echo '<h5>Välkommen'.$categories[0][$i]["Name"].'</h3>';
+            
+             echo '<div class="signed_in_user">';
+			echo '<h4>Välkommen'.$user[0][$i]["Name"].'</h4>';
+            
+            echo '<a href="order.php" type="submit" value="Kundkorg" class="shopping_cart"></a>';
+            echo '</div>';
         }else{
         
         }
