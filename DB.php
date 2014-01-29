@@ -309,8 +309,6 @@ public function db_GetUserByEmail($email){
 		$result = $this->query($sql); 
 		$row = $result->fetch_assoc();
 		$hashedPassword = $this->hashPassword($password);
-		var_dump($row);
-		var_dump($hashedPassword);
 		if($hashedPassword == $row['Password']){
 			return true;
 		}
