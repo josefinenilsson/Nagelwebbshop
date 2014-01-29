@@ -306,6 +306,24 @@ img {
 
 }
 
+/* Användare inloggad gränssnitt  */
+.signed_in_user{
+    width: 400px;
+    float: right;
+    margin-right: 0px;
+    margin-top: -33px;
+    color: #fff;
+
+}
+
+.shopping_cart{
+    float: right;
+    margin-top: -40px;
+    margin-right: 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
 
 
 

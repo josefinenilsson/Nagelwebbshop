@@ -13,8 +13,9 @@ if(!empty($_POST["loginbutton"])){ // Om formuläret är ifyllt, kör "post" på
 
 		if($db->matchFunction($email, $password)){
 		  	$_SESSION["Email"] = $email; // Spara $email (användarens email) i $_SESSION
-            var_dump($db->db_GetUserByEmail($email));
-            //$_SESSION["Name"] = $name;
+            $userData = $db->db_GetUserByEmail($email); // Hämtar användarens namn samt om den är admin eller ej.
+            $_SESSION["Name"] = $userData["Firstname"]; // Sparar användarens förnamn i $_SESSION["Name"] 
+            $_SESSION["isAdmin"] = $userData["isAdmin"]; //Sparar om användaren är admin eller ej i $_SESSION["isAdmin"]
 		} else {
 
 		}
@@ -47,12 +48,12 @@ if(!empty($_POST["loginbutton"])){ // Om formuläret är ifyllt, kör "post" på
         <li><a href="about.php">Om oss</a></li>
     </ul>
         <?php
-        if (!empty($_SESSION["Email"])){
+        if (!empty($_SESSION["Email"])&&!empty($_SESSION["Name"])){
             
              echo '<div class="signed_in_user">';
-			echo '<h4>Välkommen'.$user[0][$i]["Name"].'</h4>';
+			echo '<h4>Välkommen '.$_SESSION["Name"].'</h4>';
             
-            echo '<a href="order.php" type="submit" value="Kundkorg" class="shopping_cart"></a>';
+            echo '<a href="order.php"  class="shopping_cart">Kundkorg</a>';
             echo '</div>';
         }else{
         

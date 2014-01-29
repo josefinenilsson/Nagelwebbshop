@@ -1,9 +1,11 @@
 <?php 
-	include "header.php";
+	require_once("header.php");
  ?>
 
 
-<?php var_dump($_SESSION);
+<?php 
+echo '<h2>Session</h2>';
+var_dump($_SESSION);
 ?>
 
 <div class="addmember">
@@ -12,7 +14,7 @@
 </p><p>P.s Du måste vara medlem för att kunna shoppa d.s</p>
         <a href="adduser.php"><input class="become_member"  type="submit"  value="Bli medlem"></a>
       </div>
-<h4><a href="reset.php">Session reset</a></h4>
+<h4><a href="logout.php">Logga ut</a></h4>
 <h4><a href="adminproducts.php">Admin produkt</a></h4>
 <h4><a href="adminuser.php">Admin user</a></h4>
 <h4><a href="createuseradmin.php">Skapa admin/ användare</a></h4>

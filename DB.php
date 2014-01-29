@@ -189,7 +189,7 @@ class Database extends mysqli {
 	########################### */
 	
 public function db_GetUserByEmail($email){
-		if($result = $this->query('SELECT `Name` FROM `User` WHERE `Email` = "'.$email.'"')){
+		if($result = $this->query('SELECT `Firstname`,`isAdmin` FROM `User` WHERE `Email` = "'.$email.'"')){
            return mysqli_fetch_assoc($result);		
 		} else {
 			return false;
