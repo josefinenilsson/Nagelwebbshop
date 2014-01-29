@@ -12,7 +12,7 @@
   
     <div id="ordernow">
     <button type="button">Slutför beställning</button>
-    <p>Genom att trycka på Slutför beställning bekräftar du att din beställning kommer att skickas  inom 3-5 dagar. All betalning sker genom postförskott, detta innebär att du betalar när du hämtar ut ditt paket..</p>
+    <p>Genom att trycka på Slutför beställning bekräftar du att din beställning kommer att skickas  inom 3-5 dagar. All betalning sker genom postförskott, detta innebär att du betalar när du hämtar ut ditt paket.</p>
     </div>
     
 </article>
