@@ -326,7 +326,7 @@ ul.menu > li {
 }
 
 ul.menu > li > a {
-	border-radius: 5px;
+	border-radius:;
 }
 
 ul.menu > li > ul > li > a {
@@ -335,7 +335,6 @@ ul.menu > li > ul > li > a {
 
 ul.menu li > a {
 	height: 21px;
-	background: #8F180C;
 	padding: 7px;
 	min-width: 60px;
 	display: block;      
@@ -346,8 +345,7 @@ ul.menu li > a {
 }
 
 ul.menu li:hover > a {
-	background: #000;
-    color: #8F180C;
+
 }
  
 ul.menu > li ul {

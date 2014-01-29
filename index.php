@@ -15,9 +15,6 @@ var_dump($_SESSION);
         <a href="adduser.php"><input class="become_member"  type="submit"  value="Bli medlem"></a>
       </div>
 
-<h4><a href="adminproducts.php">Admin produkt</a></h4>
-<h4><a href="adminuser.php">Admin user</a></h4>
-<h4><a href="createuseradmin.php">Skapa admin/ användare</a></h4>
 
 <?php
 	include "footer.php";
