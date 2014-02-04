@@ -5,7 +5,7 @@
   
 
 
-<form action="adduser.php" method="post" enctype="multipart/form-data">
+<form  method="post" enctype="multipart/form-data">
         <table>
             <tr>
                 

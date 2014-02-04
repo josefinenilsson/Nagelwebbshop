@@ -8,9 +8,9 @@ require_once("DB.php"); // Includes the database
 if (isset($_POST['delete'])){ // Om man trycker på kanppen 'delete' kör funktionen db_DeleteFunction
 	if($db->db_DeleteUser($_POST['delete'])) {
         
-		echo "User deleted.";
+		echo "Användaren är nu borttagen";
 	} else {
-		echo "Failed to delete user.";
+		echo "Kunde inte radera användaren";
 	}
 }
 $user[] = $db->db_ListUser(); // Hämta en array genom funktionen db_ListUser()

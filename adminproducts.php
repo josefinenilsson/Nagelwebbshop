@@ -7,9 +7,9 @@ require_once("DB.php"); // Includes the database
 
 if (isset($_POST['delete'])){ // Om man trycker på kanppen 'delete' kör funktionen db_DeleteFunction
 	if($db->db_DeleteProduct($_POST['delete'])) {
-		echo "Product deleted.";
+		echo "Produkten är nu borttagen";
 	} else {
-		echo "Product failed to delete.";
+		echo "Kunde inte radera produkten";
 	}
 }
 $products[] = $db->db_ListProducts(); // Hämta en array genom funktionen db_ListProducts()
