@@ -143,9 +143,10 @@ class Database extends mysqli {
 	########################### */	
 // Här har vi en funktion som tar bort en användare ur databasen där SSN stämmer in med det man valt
 	public function db_DeleteUser($SSn){
-		if($this->query('DELETE FROM `176225-webshop`.`User` WHERE `User`.`SSN` = '.$SSn.'')){
-		return true;
-		} else false;
+		if($this->query('DELETE FROM `176225-webshop`.`User` WHERE `User`.`SSN` = "'.$SSn.'"')){
+		  return true;
+		}
+        return false;
 	}
 	
 	
@@ -170,9 +171,11 @@ class Database extends mysqli {
 	/* 	########################### 
 		List user
 	########################### */
+    
+    // Hämtar förnamn, efternamn av alla användare
 	
 	public function db_ListUser(){
-		if($result = $this->query('SELECT `SSN` FROM `User`')){
+		if($result = $this->query('SELECT `Firstname`,`Lastname`,`SSN` FROM `User`')){
 		$i=0;
 		while($row = mysqli_fetch_assoc($result)){
 			$user_list[$i] = $row;
@@ -187,8 +190,9 @@ class Database extends mysqli {
     /* 	########################### 
 		Get user
 	########################### */
-	
-public function db_GetUserByEmail($email){
+	// Hämtar användarinformation från en viss mailadress
+    
+public function db_GetUserByEmail($email){ 
 		if($result = $this->query('SELECT `Firstname`,`isAdmin` FROM `User` WHERE `Email` = "'.$email.'"')){
            return mysqli_fetch_assoc($result);		
 		} else {

@@ -25,17 +25,19 @@ $products[] = $db->db_ListProducts(); // Hämta en array genom funktionen db_Lis
 if($products == false){ // Om den inte kan hämta produktlistan genom db_ListProducts()
      return "Error"; // Visa fel
 }  else {
+    echo '<form method="post">';
     for ($i = 0; $i < count($products[0]); $i++){ // Om den hittar produkterna kör en for loop. Som skriver ut en tabell med de olika värderna.
         	
 		echo '<table class="admin_table" border="1">';
 		echo '<tr>';
 		echo '<td class="admin_td">'.$products[0][$i]["SerialNumber"].'</td>';
 		echo '<td class="admin_td">'.$products[0][$i]["Name"].'</td>';
-		echo '<td class="admin_td"><form action="/adminproducts.php" method="post"><input type="submit" value="'.$serialNumber.'" name="delete"></form></td>';
+		echo '<td class="admin_td"><button type="submit" value="'.$products[0][$i]["SerialNumber"].'" name="delete">Ta bort</button></td>';
 		echo '</tr>';
 		echo '</table>';
 					
     }
+    echo '</form>';
 }
 
 ?>

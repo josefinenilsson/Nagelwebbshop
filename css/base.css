@@ -32,8 +32,6 @@ h3 {
 
 header{
 	height:60px;
-	margin-bottom: 4px;
-	padding-top: 10px;
 	border: 1px solid #080808;
 	background-color: #222222;
 	
@@ -44,9 +42,11 @@ header{
 	
 	font-family: 'Open Sans', sans-serif;
 	font-size: 15px;
-	margin-left:20%;
-    margin-top:-15px;
+	margin: 0 12%;
 }
+
+
+/* Login fält  */
 
 .form_group{
 		
@@ -84,9 +84,81 @@ header{
 	color:#FFF;
 }
 
-form {
-	/*width: 300px; */
+/*  Meny/ Dropdown */
+
+ul{
+    margin:0;
+    line-height:60px;
+    
 }
+
+ul.menu{
+    float:left;
+}
+
+ul.signed_in_user{
+    float:right;
+}
+
+ul > li {
+    position: relative;
+    list-style-type: none;
+    display: inline-block;
+
+    font-size: 18px;
+}
+
+ul > li > a {
+	border-radius:;
+}
+
+ul > li > ul > li > a {
+	background: #222222 !important;
+}
+
+ul li > a {
+    padding: 0 5px;
+	min-width: 60px;
+	display: block;      
+	color: #FFF;
+	text-align: center;
+	white-space: nowrap;
+	text-decoration: none;
+}
+
+ul li:hover > a {
+
+}
+ 
+ul > li ul {
+	top: 60px;
+	display: none;
+    position: absolute;
+    overflow:hidden;
+   
+}
+
+ul.signed_in_user > li ul {
+    right:0;
+}
+
+ul > li:hover ul {
+	display: block;
+}
+
+ul > li ul li {
+	display: block;
+}
+
+ul > li ul li > a:hover{
+    text-decoration:underline;
+}
+ 
+ul li ul {
+-webkit-padding-start: 0px;
+
+}
+
 
 article {
 	margin-top: 10px;
@@ -267,112 +339,73 @@ img {
 /* Adminproduct sidan */
 
 .admin_table{
+    border:1px solid #cacaca;
 
 }
 
 .admin_th{
 	width:150px;
+    background:#222222;
+    color:#fff;
+    border:none;
+    margin-left:1px;
+   
 
 
 }
 
 .admin_td{
 	width:150px;
+    border: 1px solid #fff;
+    
 	
 
 }
 
 /* Användare inloggad gränssnitt  */
 .signed_in_user{
-    width: 400px;
-    float: right;
     margin-right: 0px;
-    margin-top: -10px;
     color: #fff;
 
 }
-    .signed_in_user h4{
-        margin-bottom:20px;
-    }
 
 .shopping_cart{
-    float: right;
-    margin-top: -40px;
-    margin-right: 20px;
     color: #fff;
     text-decoration: none;
+    padding-left: 80px;
 }
 
-.logout{
-    float: left;
-    margin-top: -20px;
+
+.changeUser{
+    border: 1px solid #222;
+	border-radius: 5px;
+	padding:5px;
+	margin-bottom:2.5px;
+	margin-top: 2.5px;
+	font-size:15px;
+	-webkit-outer-spin-button:display:none;
+	-webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+	-webkit-inner-spin-button
+    display: none; 
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */    
 }
 
-    .logout a{
-        color:#fff;
-        text-decoration:none;
-    }
+.changeUsertext{
+    width: 250px;
+    float: right;
+    margin-right: 140px;
+    margin-top: -150px;
+    font-size: 15px;
+
+}
 
 
 /* Admin gränssnitt  */
  
-/*Admin meny*/
-ul.menu > li {
-	float: left;
-    position: relative;
-    list-style-type: none;
-    display: inline-block;
-    padding: 5px;
-    font-size: 18px;
-}
 
-ul.menu > li > a {
-	border-radius:;
-}
 
-ul.menu > li > ul > li > a {
-	background: #222222 !important;
-}
-
-ul.menu li > a {
-	height: 21px;
-	padding: 7px;
-	min-width: 60px;
-	display: block;      
-	color: #FFF;
-	text-align: center;
-	white-space: nowrap;
-	text-decoration: none;
-}
-
-ul.menu li:hover > a {
-
-}
- 
-ul.menu > li ul {
-	top: 42px;
-	display: none;
-    position: absolute;
-    overflow:hidden;
-   
-}
-
-ul.menu > li:hover ul {
-	display: block;
-}
-
-ul.menu > li ul li {
-	display: block;
-}
- 
-ul.menu li ul {
--webkit-padding-start: 0px;
-
-}
-
-ul.menu > li.home{
-	float: right;
-}
 
 
 

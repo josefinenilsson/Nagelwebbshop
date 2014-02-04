@@ -3,10 +3,7 @@
  ?>
 
 
-<?php 
-echo '<h2>Session</h2>';
-var_dump($_SESSION);
-?>
+
 
 <div class="addmember">
         <h1>Välkommen till Nailsnail</h1>

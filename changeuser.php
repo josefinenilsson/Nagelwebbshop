@@ -20,28 +20,30 @@
 
 <form action="changeuser.php" method="post" enctype="multipart/form-data">
         <table>
-            <tr>
-                <td>Email</td>
-                <td><input type="email" name="Email"</td>
-            </tr>
-			<tr>
-                <td>Adress</td>
-                <td><input type="text" name="Adress"</td>
+           
+                
+                <td><input class="changeUser" placeholder="Ny adress" type="text" name="Adress"</td>
             </tr>
             <tr>
-                <td>Telefonnummer</td>
-                <td><input type="number" name="Phonenumber"</td>
+              
+                <td><input class="changeUser" placeholder="Nytt telefonnummer" type="number" name="Phonenumber"</td>
             </tr>
             <tr>
-                <td>Lösenord</td>
-                <td><input type="password" name="Password"</td>
+              
+                <td><input class="changeUser" placeholder="Nytt lösenord" type="password" name="Password"</td>
             </tr>
 			
 			<tr>
-                <td>Spara</td>
-                <td><input type="submit" name="submit"</td>
+                
+                <td><input class="changeUser" value="Spara nya uppgifter"  type="submit" name="submit"</td>
             </tr>
         </table>
+                    
+        <div class="changeUsertext">
+            <h3>Ändra användaruppgifter</h3>
+            <p>Här kan du ändra dina användaruppgifter.</p>
+                    
+        </div>
     </article>
 </body>
 

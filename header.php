@@ -43,12 +43,12 @@ if(!empty($_POST["loginbutton"])){ // Om formuläret är ifyllt, kör "post" på
              
              <?php if(!empty($_SESSION["isAdmin"])&& $_SESSION["isAdmin"] == true){ ?>
              
-                            <li><a href="#">Admin</a>
+                            <li><a>Admin</a>
                                     <ul>
                                             <li><a href="adminproducts.php">Ta bort produkter</a></li>
                                             <li><a href="addproduct.php">Lägg till produkter</a></li>
                                             <li><a href="adminuser.php">Ta bort användare</a></li>
-                                            <li><a href="adduser.php">Lägg till användare</a></li>
+                                            <li><a href="createuseradmin.php">Lägg till användare</a></li>
                                     </ul>
                             </li>
               <?php } ?>
@@ -61,12 +61,16 @@ if(!empty($_POST["loginbutton"])){ // Om formuläret är ifyllt, kör "post" på
         <?php
         if (!empty($_SESSION["Email"])&&!empty($_SESSION["Name"])){
             
-             echo '<div class="signed_in_user">';
-			echo '<h4>Välkommen '.$_SESSION["Name"].'</h4>';
-            echo '<h4 class="logout"><a href="logout.php">Logga ut</a></h4>';
-            
-            echo '<a href="order.php"  class="shopping_cart">Kundkorg</a>';
-            echo '</div>';
+            echo '<ul class="signed_in_user">';
+			echo '   <li><a>Välkommen '.$_SESSION["Name"].'</a>';
+            echo '      <ul>';
+            echo '          <li><a href="changeuser.php">Inställningar</a></li>';    
+            echo '          <li><a href="#">Ordrar</a></li>';
+            echo '          <li><a href="logout.php">Logga ut</a></li>';
+            echo '      </ul>';
+            echo '  </li>';
+            echo '  <li><a href="order.php"  class="shopping_cart">Kundkorg</a></li>';
+            echo '</ul>';
         }else{ ?>
         <form method="post" class="login" role="form">
             <div class="form_group">
