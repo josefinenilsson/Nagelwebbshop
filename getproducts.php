@@ -3,6 +3,15 @@
 if (isset($_POST['addtocart'])){
     if(isset($_SESSION["Email"])&& isset($_SESSION["OrderID"])){ 
 		// Om $email finns i session
+        if($orderlist = $db->db_GetDataFromOrderlist($_SESSION["OrderID"],$_POST['addtocart'])){
+            if($db->db_UpdateDataToOrderlist(($orderlist["Amount"]+1),$_SESSION["OrderID"],$_POST['addtocart'])){
+            echo "apa";
+            }
+        } else{
+            $db->db_AddProductToOrderlist($_SESSION["OrderID"],$_POST['addtocart']);
+        
+        }
+        
         
 
 		} else {

@@ -267,7 +267,7 @@ public function db_GetUserByEmail($email){
 /* 	########################### 
 		List Orders by User
 	########################### */
-    //
+    // hämtar alla ordrar för en viss användare
     public function db_ListOrdersByUser($SSn){
         if($result = $this->query('SELECT * FROM `Order` WHERE `Customer` = "'.$SSn.'"')){
             return $result;
@@ -275,7 +275,46 @@ public function db_GetUserByEmail($email){
             return false;
         }
     }
-	
+    
+    
+/* 	########################### 
+    Add products to orderlist
+	########################### */
+    public function db_AddProductToOrderlist($orderID,$serialNumber){
+        if($this->query('INSERT INTO `Order_List`(`Order_ID`, `Product_ID`,`Amount`) VALUES ("'.$orderID.'","'.$serialNumber.'",1)')){
+            return true;
+        } else {
+            return false;
+        } 
+            
+    }
+    
+/* 	########################### 
+    Get data from orderlist
+	########################### */
+    public function db_GetDataFromOrderlist($orderID,$serialNumber){
+        if($result = $this->query('SELECT * FROM `Order_List` WHERE `Order_ID` = "'.$orderID.'" AND `Product_ID` = "'.$serialNumber.'"')){
+            return $result->fetch_assoc();
+        } else {
+            return false;
+        }
+    }
+    
+/* 	########################### 
+    Update data to Orderlist
+	########################### */
+    public function db_UpdateDataToOrderlist($amount,$orderID,$serialNumber){
+        if($this->query('UPDATE `Order_List` SET `Amount`="'.$amount.'" WHERE `Order_ID`="'.$orderID.'" AND `Product_ID`="'.$serialNumber.'"')){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    
+    
+    
+    
 	
 	#################################################################################################################################################
 											/* DATABASE ORDER FUNCTIONS ENDS  */
