@@ -104,6 +104,19 @@ class Database extends mysqli {
 		} else{
 			return false;
 			}
+	}
+    
+    /* 	########################### 
+		Get Product
+	########################### */
+// Get one product from products by serialnumber
+	
+    public function db_GetProduct($serialNumber){
+		if ($result = $this->query('SELECT * FROM `Products` WHERE `SerialNumber` = "'.$serialNumber.'" ')) {
+			return $result->fetch_assoc();
+		} else{
+			return false;
+			}
 	}	
     
 
@@ -299,6 +312,24 @@ public function db_GetUserByEmail($email){
             return false;
         }
     }
+/* 	########################### 
+    Get all from orderlist by order id
+	########################### */
+    public function db_GetProductsInCart($orderID){
+        $orderID = intval($orderID);
+        if($result = $this->query('SELECT * FROM `Order_List` WHERE Order_ID = "'.$orderID.'"')){
+            $i=0;
+            $order_list = array();
+            while($row = $result->fetch_assoc()){
+                $order_list[$i] = $row;
+                $i++;
+            }
+            return $order_list;
+        } else {
+            return false;
+        }
+    }
+    
     
 /* 	########################### 
     Update data to Orderlist

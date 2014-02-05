@@ -16,3 +16,49 @@
     </div>
     
 </article>
+
+
+<table>
+    <thead>
+        <th><a href="#" class="sort" data-sort="name">Produktnamn</a></th>
+        <th><a href="#" class="sort" data-sort="amount">Antal</a></th>
+        <th></th>
+        <th><a href="#" class="sort" data-sort="price">Pris</a></th>
+    </thead>
+    <tbody>
+        <?php
+
+        $order[] = $db->db_GetProductsInCart($_SESSION["OrderID"]);
+        var_dump($order);
+        var_dump($_SESSION["OrderID"]);
+
+        echo '<form method="post" >';
+
+        if($order == false){
+        return "Error";
+        }  else {
+        
+       
+        for ($i = 0; $i < count($order[0]); $i++){
+            $product = $db->db_GetProduct($order[0][$i]["Product_ID"]);
+            echo '<h2>Product</h2>';
+            var_dump($product);
+            echo '<tr>';
+            echo '<td class="name"><a href="">'.$product["Name"].'</a></td>';
+            echo '<td class="amount"><input name="'.$order[0][$i]["Product_ID"].'" value="'.$order[0][$i]["Amount"].'" ></td>';
+            echo '<td><button>Uppdatera</button><button>Ta bort</button></td>';
+            echo '<td class="price"><a href="">'.$product["Price"].'</a></td>';
+            echo '</tr>';
+            
+                }
+            }
+
+            echo '</form>';
+            ?>
+    </tbody>
+</table>
+
+
+<?php
+include "footer.php";
+?>
