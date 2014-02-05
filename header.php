@@ -12,12 +12,18 @@ if(!empty($_POST["loginbutton"])){ // Om formuläret är ifyllt, kör "post" på
 		// Om $email & $password inte är tomma kör funktionen matchFunkction() mot databasen och kolla om inloggningsuppgifterna stämmer
 
 		if($db->matchFunction($email, $password)){
-		  	$_SESSION["Email"] = $email; // Spara $email (användarens email) i $_SESSION
             $userData = $db->db_GetUserByEmail($email); // Hämtar användarens namn samt om den är admin eller ej.
-            $_SESSION["Name"] = $userData["Firstname"]; // Sparar användarens förnamn i $_SESSION["Name"] 
-            $_SESSION["isAdmin"] = $userData["isAdmin"]; //Sparar om användaren är admin eller ej i $_SESSION["isAdmin"]
+            if($orderID = $db->db_AddOrder(date("Y-m-d H:i:s"),$userData["SSN"],$_SERVER["REMOTE_ADDR"],false)){
+                $_SESSION["Email"] = $email; // Spara $email (användarens email) i $_SESSION
+                $_SESSION["OrderID"] = $orderID; // Sparar orderID i $_SESSION["OrderID"]
+                $_SESSION["Name"] = $userData["Firstname"]; // Sparar användarens förnamn i $_SESSION["Name"] 
+                $_SESSION["isAdmin"] = $userData["isAdmin"]; //Sparar om användaren är admin eller ej i $_SESSION["isAdmin"]
+            } else{
+                echo "Kunde inte skapa order!";
+            
+            } 
 		} else {
-
+            echo "Kunde inte logga in";
 		}
 	}
 }

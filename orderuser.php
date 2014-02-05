@@ -1,7 +1,9 @@
-
 <?php
-	include "header.php";
+include "header.php";
 ?>
+
+<h2>Här är dina ordrar</h2>
+
 <?php
 require_once("DB.php"); // Includes the database
 
@@ -38,16 +40,13 @@ if($user == false){ // Om den inte kan hämta användarlistan genom db_ListUser(
 		echo '<td class="admin_td"><button type="submit" value="'.$user[0][$i]["SSN"].'" name="delete">Ta bort användare</button></td>';
 		echo '</tr>';
 		echo '</table>';
-        
+        echo '</form>';
 					
     }
-    echo '</form>';
 }
 
 ?>
+
 <?php
-	include "footer.php";
+include "footer.php";
 ?>
-
-
-              

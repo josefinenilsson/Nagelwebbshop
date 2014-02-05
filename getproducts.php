@@ -1,11 +1,13 @@
 <?php
 	include "header.php";
 if (isset($_POST['addtocart'])){
-    if(isset($_SESSION["Email"])){ 
+    if(isset($_SESSION["Email"])&& isset($_SESSION["OrderID"])){ 
 		// Om $email finns i session
+        
 
 		} else {
         header ("Location: /login.php");
+        // skickar till login.php sidan
 
 		}
 	}

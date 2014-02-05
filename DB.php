@@ -193,7 +193,7 @@ class Database extends mysqli {
 	// Hämtar användarinformation från en viss mailadress
     
 public function db_GetUserByEmail($email){ 
-		if($result = $this->query('SELECT `Firstname`,`isAdmin` FROM `User` WHERE `Email` = "'.$email.'"')){
+		if($result = $this->query('SELECT * FROM `User` WHERE `Email` = "'.$email.'"')){
            return mysqli_fetch_assoc($result);		
 		} else {
 			return false;
@@ -225,9 +225,12 @@ public function db_GetUserByEmail($email){
 	########################### */
 // Här har vi en funktion som lägger till i databasen, Vi använder den här för att lägga till en produkt
 	
-	public function db_AddOrder(){
-		$this->query('INSERT INTO `Order`(`Date`, `Time`, `Customer`, `IP_Adress`, `ID`, `HasCheckedOut`) VALUES 		 	 ('.$date.','.$time.','.$SSn.','.$IPadress.','.$serialNumber.','.$hasCheckedOut.')');
-	
+	public function db_AddOrder($date,$SSn,$IPadress,$hasCheckedOut){
+		if($result = $this->query('INSERT INTO `Order`(`Date`, `Customer`, `IP_Adress`, `HasCheckedOut`) VALUES 		 	 ("'.$date.'","'.$SSn.'","'.$IPadress.'","'.$hasCheckedOut.'")')){
+            return $this->insert_id;
+        } else{
+            return false;
+        }
 }
 	
 /* 	########################### 
@@ -260,6 +263,18 @@ public function db_GetUserByEmail($email){
 		$this->query('SELECT * FROM ');
 	}
 	// INTE KLAR
+    
+/* 	########################### 
+		List Orders by User
+	########################### */
+    //
+    public function db_ListOrdersByUser($SSn){
+        if($result = $this->query('SELECT * FROM `Order` WHERE `Customer` = "'.$SSn.'"')){
+            return $result;
+        } else{
+            return false;
+        }
+    }
 	
 	
 	#################################################################################################################################################

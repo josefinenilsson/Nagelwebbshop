@@ -20,7 +20,7 @@ if(!empty($_POST["loginbutton"])){ // Om formuläret är ifyllt, kör "post" på
 
 		if($db->matchFunction($email, $password)){
 		  	$_SESSION["Email"] = $email; // Spara $email (användarens email) i $_SESSION
-			echo "Du är inloggad!";
+			echo "Du är nu inloggad!";
 		} else {
 			echo "Inloggning misslyckades";
 		}
