@@ -65,9 +65,9 @@ require_once("DB.php"); // Includes the database
 if(isset($_POST["submit"])) { 
 	
 	if($db->db_AddUser($_POST["Firstname"],$_POST["Lastname"],$_POST["Email"],$_POST["Adress"],$_POST["SSN"],$_POST["Phonenumber"],$_POST["Password"],"false")){
-			echo "Success!";
+        echo "Du är nu medlem";
 		} else {
-			echo "Failure!";
+            echo "Du kunde inte bli medlem";
 		}		
 	} // Function ends here
 

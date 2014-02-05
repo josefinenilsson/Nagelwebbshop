@@ -84,6 +84,19 @@ header{
 	color:#FFF;
 }
 
+
+.login_extra{
+    float: right;
+    width: 450px;
+    padding-top:86px;
+    
+   
+}
+
+.login_extra .form_group input{
+    border:1px solid #000;
+}
+
 /*  Meny/ Dropdown */
 
 ul{
@@ -183,6 +196,25 @@ article {
 	background:#000;
 }
 
+.become_member_login{
+    padding-top:50px;
+
+}
+
+.become_member_login_text{
+    width:300px;
+    display:inline-block;
+    font-size:1.3em;
+
+}
+
+    .become_member_login_text h3{
+        float:none;
+    }
+.become_member_login_form{
+    display:inline-block;
+}
+
 
 img {
 	
@@ -271,6 +303,16 @@ img {
 
 .get_Products input{
 	margin-left:35px;
+	border-radius:5px;
+	border:none;
+	padding:10px;
+	font-size:15px;
+	background:#5cb85c;
+	color:#FFF;
+}
+
+.get_Products button{
+    margin-left:35px;
 	border-radius:5px;
 	border:none;
 	padding:10px;
