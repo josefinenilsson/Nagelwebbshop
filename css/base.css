@@ -1,5 +1,5 @@
 body {
-	font-family: 'Open Sans', sans-serif;
+	font-family: /*'Open Sans',*/"helvetica", sans-serif;
 	font-size: 13px;
 	background:;
 	margin:0px;
@@ -26,9 +26,7 @@ h3 {
     margin-right: 50px;
 }
 
-#ordernow{
-    width:266px;
-}
+
 
 header{
 	height:60px;
@@ -367,6 +365,9 @@ img {
 	margin-bottom:2.5px;
 	margin-top:2.5px;
 	}
+
+.selectCategory{
+}
 	
 
 }
@@ -443,12 +444,62 @@ img {
 
 }
 
+.logedinmember{
+    text-align:center;
+}
+
 
 /* Admin gränssnitt  */
  
 
+/* Kundkorg  */
 
+.order_list{
+    padding:5px;
+}
+.order_list a{
+    text-decoration:none;
+    color:#000;
+    
+}
 
+.price{
+    text-align:right;
+}
+.total{ 
+    text-align:right;
+    padding-right:75px;
+}
+
+.sort{
+    text-decoration:none;
+    color:#000;
+
+}
+
+.sort:hover{
+    text-decoration:underline;
+
+}
+
+.totalvalue{
+    padding-top:15px;
+
+}
+
+.check_out{
+    padding:5px;
+
+}
+
+.ordernow{
+    font-size:1.1em;
+}
+
+#sortable{
+    width:840px;
+    
+}
 
 
 

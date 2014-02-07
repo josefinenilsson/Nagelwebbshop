@@ -1,32 +1,27 @@
-<?php
-	include "header.php";
+<?php include "header.php";
 if (isset($_POST['addtocart'])){
     if(isset($_SESSION["Email"])&& isset($_SESSION["OrderID"])){ 
 		// Om $email finns i session
         if($orderlist = $db->db_GetDataFromOrderlist($_SESSION["OrderID"],$_POST['addtocart'])){
             if($db->db_UpdateDataToOrderlist(($orderlist["Amount"]+1),$_SESSION["OrderID"],$_POST['addtocart'])){
-            echo "apa";
             }
         } else{
             $db->db_AddProductToOrderlist($_SESSION["OrderID"],$_POST['addtocart']);
-        
+            echo "Din produkt har lagts till i kundkorgen";
         }
         
-        
-
-		} else {
+        } else {
         header ("Location: /login.php");
+        exit();
         // skickar till login.php sidan
-
-		}
+        }
 	}
 
 require_once("DB.php"); // Includes the database
 
-
 $products[] = $db->db_GetProducts($_GET['category']);
 
-echo '<form method="post" >';
+echo '<form method="post">';
 
 if($products == false){
      return "Error";
@@ -43,7 +38,5 @@ if($products == false){
 }
 
 echo '</form>';
-?>
-<?php
-	include "footer.php";
-?>
+
+include "footer.php"; ?>

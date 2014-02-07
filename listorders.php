@@ -1,9 +1,5 @@
-<?php
-include "header.php";
-require_once("DB.php");
-?>
-
-<h2>Här är dina ordrar</h2>
+<?php include "header.php";
+require_once("DB.php"); // Includes the database ?>
 
 <table id="sortable">
         <thead>
@@ -15,24 +11,22 @@ require_once("DB.php");
             <th><input placeholder="Sök.." class="form-control search"></th>
         </thead>
         <tbody class="list">
-            <?php
-            $userorders[] = $db->db_ListOrdersByUser($_SESSION["SSN"]);
+    <?php   $orders[] = $db->db_ListOrders();
             echo '<form method="post" >';
-            if($userorders == false){
-                echo "Error";
+            if($orders == false){
+                return "Error";
                 }  else {
-                    for ($i = 0; $i < count($userorders[0]); $i++){
+                    for ($i = 0; $i < count($orders[0]); $i++){
                         echo '<tr>';
-                        echo '<td class="date order_list">'.$userorders[0][$i]["Date"].'</td>';
-                        echo '<td class="customer order_list">'.$userorders[0][$i]["Customer"].'</td>';
-                        echo '<td class="ipadress order_list">'.$userorders[0][$i]["IP_Adress"].'</td>';
-                        echo '<td class="orderid order_list">'.$userorders[0][$i]["ID"].'</td>';
-                        echo '<td class="checkedout order_list">'.$userorders[0][$i]["HasCheckedOut"].'</td>';
+                        echo '<td class="date order_list">'.$orders[0][$i]["Date"].'</td>';
+                        echo '<td class="customer order_list">'.$orders[0][$i]["Customer"].'</td>';
+                        echo '<td class="ipadress order_list">'.$orders[0][$i]["IP_Adress"].'</td>';
+                        echo '<td class="orderid order_list">'.$orders[0][$i]["ID"].'</td>';
+                        echo '<td class="checkedout order_list">'.$orders[0][$i]["HasCheckedOut"].'</td>';
                         echo '</tr>';
                             }
                         }
-                    echo '</form>';
-                    ?>
+                    echo '</form>'; ?>
         </tbody>
     </table>
 <script>
@@ -42,6 +36,4 @@ require_once("DB.php");
         
         var sortable = new List("sortable", options);
 </script>
-
-
 <?php include "footer.php"; ?>

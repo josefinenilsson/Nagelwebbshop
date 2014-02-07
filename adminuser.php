@@ -1,18 +1,16 @@
 
-<?php
-	include "header.php";
-?>
-<?php
+<?php include "header.php"; 
+
 require_once("DB.php"); // Includes the database
 
 if (isset($_POST['delete'])){ // Om man trycker på kanppen 'delete' kör funktionen db_DeleteFunction
 	if($db->db_DeleteUser($_POST['delete'])) {
-        
-		echo "Användaren är nu borttagen";
+        echo "Användaren är nu borttagen";
 	} else {
 		echo "Kunde inte radera användaren";
 	}
 }
+
 $user[] = $db->db_ListUser(); // Hämta en array genom funktionen db_ListUser()
 
 echo '<table class="admin_table" border="1">';
@@ -37,17 +35,12 @@ if($user == false){ // Om den inte kan hämta användarlistan genom db_ListUser(
 		echo '<td class="admin_td">'.$user[0][$i]["SSN"].'</td>';
 		echo '<td class="admin_td"><button type="submit" value="'.$user[0][$i]["SSN"].'" name="delete">Ta bort användare</button></td>';
 		echo '</tr>';
-		echo '</table>';
-        
-					
+		echo '</table>';				
     }
     echo '</form>';
 }
 
-?>
-<?php
-	include "footer.php";
-?>
+include "footer.php";?>
 
 
               

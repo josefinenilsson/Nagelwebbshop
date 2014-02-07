@@ -25,8 +25,8 @@ class Database extends mysqli {
 	########################### */
 // Here we have a function that inserts data to the database, in this case it adds a product
 	
-	public function db_AddProduct($serialNumber,$productName,$productDescr,$productPrice,$category_ID,$productImage){
-		if($this->query( 'INSERT INTO `Products`(`SerialNumber`, `Name`, `Description`, `Price`, `Category_ID`, `Product_image`) VALUES ("'.$serialNumber.'","'.$productName.'","'.$productDescr.'","'.$productPrice.'","'.$category_ID.'","'.$productImage.'")')){
+	public function db_AddProduct($productName,$productDescr,$productPrice,$category_ID,$productImage){
+		if($this->query( 'INSERT INTO `Products`(`Name`, `Description`, `Price`, `Category_ID`, `Product_image`) VALUES ("'.$productName.'","'.$productDescr.'","'.$productPrice.'","'.$category_ID.'","'.$productImage.'")')){
 			return true;
 		} else {
 			return false;
@@ -213,11 +213,7 @@ public function db_GetUserByEmail($email){
         }
 	}
 
-
-
-
-	
-	
+		
 	
 	
 #################################################################################################################################################
@@ -229,8 +225,7 @@ public function db_GetUserByEmail($email){
 	#################################################################################################################################################
 											/* DATABASE ORDER FUNCTIONS START  */
 #################################################################################################################################################
-	
-	// DESSA FUNKTIONER ÄR INTE FÄRDIGA!!!!
+
 	
 	
 /* 	########################### 
@@ -247,24 +242,17 @@ public function db_GetUserByEmail($email){
 }
 	
 /* 	########################### 
-		Delete Order
-	########################### */	
-// Här har vi en funktion som tar bort ur databasen, här använder vi den för att ta bort ordrar
-	
-	public function db_DeleteOrder(){
-		$this->query('DELETE FROM `176225-webshop`.`Order` WHERE `User`.`SSN` = '.$SSn.'');
-	}
-// Denna hör till shoppingcart delen (INTE KLAR)
-	
-/* 	########################### 
-		Change Order
+		Checkout Order
 	########################### */
-// Den här funktionen används för att ändra en order.
+// Den här funktionen checkar ut en order
 	
-	public function db_ChangeOrder(){
-		$this->query('');
+	public function db_CheckOutOrder($orderid){
+        if($this->query('UPDATE `Order` SET `HasCheckedOut`= "1" WHERE `ID` = "'.$orderid.'"')){
+            return true;
+        } else {
+            return false;
+        }	
 	}
-// Denna är inte heller klar!
 	
 	
 /* 	########################### 
@@ -273,26 +261,41 @@ public function db_GetUserByEmail($email){
 // Denna funktion skapar en lista med alla ordrar som finns ( admin funktion )
 	
 	public function db_ListOrders(){
-		$this->query('SELECT * FROM ');
+		if($result = $this->query('SELECT * FROM `Order`')){
+            $i=0;
+            while($row = mysqli_fetch_assoc($result)){
+                $order_list[$i] = $row;
+                $i++;
+            }
+            return $order_list;
+        } else {
+            return false;
+        }
 	}
-	// INTE KLAR
+    
     
 /* 	########################### 
 		List Orders by User
 	########################### */
     // hämtar alla ordrar för en viss användare
     public function db_ListOrdersByUser($SSn){
-        if($result = $this->query('SELECT * FROM `Order` WHERE `Customer` = "'.$SSn.'"')){
-            return $result;
-        } else{
+		if($result = $this->query('SELECT * FROM `Order` WHERE `Customer` = "'.$SSn.'"')){
+            $i=0;
+            while($row = mysqli_fetch_assoc($result)){
+                $ordersuser_list[$i] = $row;
+                $i++;
+            }
+            return $ordersuser_list;
+        } else {
             return false;
         }
-    }
+	}
     
     
 /* 	########################### 
     Add products to orderlist
 	########################### */
+    // lägger till produkter i orderlist(kundkorgen)
     public function db_AddProductToOrderlist($orderID,$serialNumber){
         if($this->query('INSERT INTO `Order_List`(`Order_ID`, `Product_ID`,`Amount`) VALUES ("'.$orderID.'","'.$serialNumber.'",1)')){
             return true;
@@ -305,6 +308,7 @@ public function db_GetUserByEmail($email){
 /* 	########################### 
     Get data from orderlist
 	########################### */
+    // Hämtar all data från orderlist(kundkorgen) med specifierat orderid samt produktid
     public function db_GetDataFromOrderlist($orderID,$serialNumber){
         if($result = $this->query('SELECT * FROM `Order_List` WHERE `Order_ID` = "'.$orderID.'" AND `Product_ID` = "'.$serialNumber.'"')){
             return $result->fetch_assoc();
@@ -315,6 +319,7 @@ public function db_GetUserByEmail($email){
 /* 	########################### 
     Get all from orderlist by order id
 	########################### */
+    // Hämtar allt som ligger i orderlist(kundkorg) för en viss order
     public function db_GetProductsInCart($orderID){
         $orderID = intval($orderID);
         if($result = $this->query('SELECT * FROM `Order_List` WHERE Order_ID = "'.$orderID.'"')){
@@ -334,6 +339,7 @@ public function db_GetUserByEmail($email){
 /* 	########################### 
     Update data to Orderlist
 	########################### */
+    // uppdaterar antalet produkter i kundkorgen
     public function db_UpdateDataToOrderlist($amount,$orderID,$serialNumber){
         if($this->query('UPDATE `Order_List` SET `Amount`="'.$amount.'" WHERE `Order_ID`="'.$orderID.'" AND `Product_ID`="'.$serialNumber.'"')){
             return true;
@@ -342,6 +348,17 @@ public function db_GetUserByEmail($email){
         }
     }
     
+/* 	########################### 
+    Delete product from orderlist
+	########################### */
+    // Tar bort en specifik produkt ur kundkorgen
+    public function db_DeleteProductFromOrderlist($serialNumber){
+        if($this->query('DELETE FROM `Order_List` WHERE `Product_ID` = "'.$serialNumber.'"')){
+            return true;
+        } else {
+            return false;
+        }
+    }
     
     
     

@@ -18,6 +18,7 @@ if(!empty($_POST["loginbutton"])){ // Om formuläret är ifyllt, kör "post" på
                 $_SESSION["OrderID"] = $orderID; // Sparar orderID i $_SESSION["OrderID"]
                 $_SESSION["Name"] = $userData["Firstname"]; // Sparar användarens förnamn i $_SESSION["Name"] 
                 $_SESSION["isAdmin"] = $userData["isAdmin"]; //Sparar om användaren är admin eller ej i $_SESSION["isAdmin"]
+                $_SESSION["SSN"] = $userData["SSN"]; // Sparar användarens personnummer i $_SESSION["SSN"]
             } else{
                 echo "Kunde inte skapa order!";
             
@@ -31,72 +32,54 @@ if(!empty($_POST["loginbutton"])){ // Om formuläret är ifyllt, kör "post" på
 <meta http-equiv="content-type"
       content="text/html;charset=utf-8" 
       />
-
- <head>
+<head>
         <link rel="stylesheet" type="text/css" href="css/base.css">
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
-    </head>
-    <body>
-		
-		<header >
-	<nav id="mainmenu">
-    
-         <ul class="menu">
-                            <li><a href="index.php">Startsida</a></li>
-                           
-                            <li><a href="listcategories.php">Produkter</a></li>
-                            <li><a href="about.php">Om oss</a></li>
+	<!--<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>-->
+     <script type="text/javascript" src="/js/list.js"></script>
+</head>
+<body>
+    <header >
+	   <nav id="mainmenu">
+            <ul class="menu">
+                <li><a href="index.php">Startsida</a></li>
+                <li><a href="listcategories.php">Produkter</a></li>
+                <li><a href="about.php">Om oss</a></li>
              
-             <?php if(!empty($_SESSION["isAdmin"])&& $_SESSION["isAdmin"] == true){ ?>
-             
-                            <li><a>Admin</a>
-                                    <ul>
-                                            <li><a href="adminproducts.php">Ta bort produkter</a></li>
-                                            <li><a href="addproduct.php">Lägg till produkter</a></li>
-                                            <li><a href="adminuser.php">Ta bort användare</a></li>
-                                            <li><a href="createuseradmin.php">Lägg till användare</a></li>
-                                    </ul>
-                            </li>
-              <?php } ?>
-                        
+        <?php if(!empty($_SESSION["isAdmin"])&& $_SESSION["isAdmin"] == true){ ?>
+                <li><a>Admin</a>
+                    <ul>
+                        <li><a href="adminproducts.php">Ta bort produkter</a></li>
+                        <li><a href="addproduct.php">Lägg till produkter</a></li>
+                        <li><a href="adminuser.php">Ta bort användare</a></li>
+                        <li><a href="createuseradmin.php">Lägg till användare</a></li>
+                        <li><a href="listorders.php">Visa ordrar</a></li>
                     </ul>
-                
-       
-       
-    
-        <?php
-        if (!empty($_SESSION["Email"])&&!empty($_SESSION["Name"])){
-            
+                </li>
+              <?php } ?>
+            </ul>
+        <?php if (!empty($_SESSION["Email"])&&!empty($_SESSION["Name"])){
             echo '<ul class="signed_in_user">';
-			echo '   <li><a>Välkommen '.$_SESSION["Name"].'</a>';
+            echo '   <li><a>Välkommen '.$_SESSION["Name"].'</a>';
             echo '      <ul>';
             echo '          <li><a href="changeuser.php">Inställningar</a></li>';    
-            echo '          <li><a href="#">Ordrar</a></li>';
+            echo '          <li><a href="orderuser.php">Ordrar</a></li>';                
             echo '          <li><a href="logout.php">Logga ut</a></li>';
             echo '      </ul>';
             echo '  </li>';
             echo '  <li><a href="order.php"  class="shopping_cart">Kundkorg</a></li>';
             echo '</ul>';
-        }else{ ?>
-        <form method="post" class="login" role="form">
-            <div class="form_group">
-				<input type="email" placeholder="Email" name="Email" class="form_control">
-              	<input type="password" name="Password" placeholder="Password" class="form_control">
-				<input type="submit" name="loginbutton" class="login_button" value="Logga in">
-            </div>
-        </form>
-        <?php } ?>
-		
-             
-             
-        
-         
-</nav>
-
-	
-</header>
-		
- <div id="wrapper">
+                }else{ ?>
+            <form method="post" class="login" role="form">
+                <div class="form_group">
+                    <input type="email" placeholder="Email" name="Email" class="form_control">
+                    <input type="password" name="Password" placeholder="Password" class="form_control">
+                    <input type="submit" name="loginbutton" class="login_button" value="Logga in">
+                </div>
+            </form>
+            <?php } ?>         
+        </nav>
+    </header>
+    <div id="wrapper">
 	 
 
 

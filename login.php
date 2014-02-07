@@ -25,10 +25,7 @@ if(!empty($_POST["loginbutton"])){ // Om formuläret är ifyllt, kör "post" på
 			echo "Inloggning misslyckades";
 		}
 	}
-}
-
-?>
-
+} ?>
 <form method="post" class="login login_extra" role="form">
             <div class="form_group">
 				<input type="email" placeholder="Email" name="Email" class="form_control">
@@ -47,44 +44,33 @@ if(!empty($_POST["loginbutton"])){ // Om formuläret är ifyllt, kör "post" på
 <form class="become_member_login_form" action="adduser.php" method="post" enctype="multipart/form-data">
         <table>
             <tr>
-                
                 <td><input class="addUser" placeholder="Förnamn" type="text" name="Firstname"</td>
             </tr>
             <tr>
-              
                 <td><input class="addUser" placeholder="Efternamn" type="text" name="Lastname"</td>
             </tr>
             <tr>
-               
                 <td><input class="addUser" placeholder="Email" type="email" name="Email"</td>
             </tr>
             <tr>
-                
                 <td><input class="addUser" placeholder="Adress" type="text" name="Adress"</td>
             </tr>
 			<tr>
-                
                 <td><input class="addUser" placeholder="Personnummer" type="number" name="SSN"</td>
             </tr>
 			<tr>
-                
                 <td><input class="addUser" placeholder="Telefonnummer" type="number" name="Phonenumber"</td>
             </tr>
 			<tr>
-              
                 <td><input class="addUser" placeholder="Lösenord" type="password" name="Password"</td>
             </tr>
 			<tr>
-              
                 <td><input value="Skapa användare" class="addUserButton" type="submit" name="submit"</td>
             </tr>
         </table>
 </div>
                     
-<?php
-
-
-require_once("DB.php"); // Includes the database
+<?php require_once("DB.php"); // Includes the database
 
 /* 	########################### 
 	Add user function
@@ -103,17 +89,4 @@ if(isset($_POST["submit"])) {
 	} // Function ends here
 
 
-
-// Här skall det vara validering av formuläret mot databasen!
-		
-
-
-
-
-
-?>
-                    
-<?php
-include "footer.php";
-                    
-?>
+include "footer.php"; ?>

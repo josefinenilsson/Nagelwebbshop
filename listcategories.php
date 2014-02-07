@@ -1,11 +1,8 @@
-<?php
-	include "header.php";
+<?php include "header.php";
 
 require_once("DB.php"); // Includes the database
 
-
 $categories[] = $db->db_ListCategories(); // Hämtar sparar array från db_ListCategories() i  variablen $categories[]
-
 
 if($categories == false){ // Om den inte hittar något = false
      return "Error";
@@ -20,9 +17,4 @@ if($categories == false){ // Om den inte hittar något = false
     }
 }
 
-
-?>
-
-<?php
-	include "footer.php";
-?>
+include "footer.php"; ?>

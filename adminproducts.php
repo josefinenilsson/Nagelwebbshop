@@ -1,8 +1,6 @@
 
-<?php
-	include "header.php";
-?>
-<?php
+<?php include "header.php"; 
+
 require_once("DB.php"); // Includes the database
 
 if (isset($_POST['delete'])){ // Om man trycker på kanppen 'delete' kör funktionen db_DeleteFunction
@@ -35,15 +33,13 @@ if($products == false){ // Om den inte kan hämta produktlistan genom db_ListPro
 		echo '<td class="admin_td"><button type="submit" value="'.$products[0][$i]["SerialNumber"].'" name="delete">Ta bort</button></td>';
 		echo '</tr>';
 		echo '</table>';
-					
     }
     echo '</form>';
 }
 
-?>
-<?php
-	include "footer.php";
-?>
+
+
+include "footer.php"; ?>
 
 
               

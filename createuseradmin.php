@@ -1,58 +1,42 @@
-<?php
-	include "header.php";
-?>
+<?php include "header.php";?>
 <article>
-  
-
-
-<form  method="post" enctype="multipart/form-data">
+    <form  method="post" enctype="multipart/form-data">
         <table>
-            <tr>
-                
-                <td><input class="addUser" placeholder="Förnamn" type="text" name="Firstname"</td>
+            <tr> 
+                <td><input class="addUser" placeholder="Förnamn" type="text" name="Firstname"></td>
             </tr>
             <tr>
-                
-                <td><input class="addUser" placeholder="Efternamn" type="text" name="Lastname"</td>
+                <td><input class="addUser" placeholder="Efternamn" type="text" name="Lastname"></td>
             </tr>
             <tr>
-               
-                <td><input class="addUser" placeholder="Email" type="email" name="Email"</td>
+                <td><input class="addUser" placeholder="Email" type="email" name="Email"></td>
             </tr>
             <tr>
-                
-                <td><input class="addUser" placeholder="Adress" type="text" name="Adress"</td>
+                <td><input class="addUser" placeholder="Adress" type="text" name="Adress"></td>
             </tr>
 			<tr>
-                
-                <td><input class="addUser" placeholder="Personnummer" type="number" name="SSN"</td>
+                <td><input class="addUser" placeholder="Personnummer" type="number" name="SSN"></td>
             </tr>
 			<tr>
-               
-                <td><input class="addUser" placeholder="Telefonnummer" type="number" name="Phonenumber"</td>
+                <td><input class="addUser" placeholder="Telefonnummer" type="number" name="Phonenumber"></td>
             </tr>
 			<tr>
-                
-                <td><input class="addUser" placeholder="Lösenord" type="password" name="Password"</td>
+                <td><input class="addUser" placeholder="Lösenord" type="password" name="Password"></td>
             </tr>
-			 <br>
-					
+			 <br>	
     			<label for="gender">Vanlig användare</label>
 				<input type="radio"  name="user" value="false"><br>
 				<label for="gender">Administratör</label>
 				<input type="radio"  name="user" value="true"><br>
 			<tr>
-                
-                <td><input class="addUserButton" value="Skapa användare" type="submit" name="submit"</td>
+                <td><input class="addUserButton" value="Skapa användare" type="submit" name="submit"></td>
             </tr>
         </table>
+    </form>
 </article>
          
 
-<?php
-
-
-require_once("DB.php"); // Includes the database
+<?php require_once("DB.php"); // Includes the database
 
 /* 	########################### 
 	Add user (admin) function
@@ -76,17 +60,5 @@ if(isset($_POST["submit"])) {
 			echo "Failure!";
 		}		
 	} // Function ends here
-
-
-
-// Här skall det vara validering av formuläret mot databasen!
-		
-
-
-
-
-
 ?>
-<?php
-	include "footer.php";
-?>
+<?php include "footer.php"; ?>
